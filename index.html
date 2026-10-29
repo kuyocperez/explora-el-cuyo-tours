@@ -1,193 +1,412 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#063b4a">
-  <title>Explora El Cuyo Tours | Tours y experiencias en El Cuyo, Yucatán</title>
-  <meta name="description" content="Tours en lancha, Las Coloradas, pesca, kitesurf, cuatrimotos, bioluminiscencia, transportación privada y hospedaje en El Cuyo, Yucatán.">
-  <meta property="og:title" content="Explora El Cuyo Tours">
-  <meta property="og:description" content="Descubre El Cuyo, en el Golfo de México: tours, aventura, naturaleza y hospedaje.">
-  <meta property="og:image" content="hero-coloradas.jpg">
-  <meta property="og:type" content="website">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛥️</text></svg>">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    :root{--deep:#063b4a;--ocean:#087e8b;--sea:#19a7a1;--sand:#f5efe3;--ink:#17343a;--white:#fff;--gold:#f4bc61}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:85px}
-    body{margin:0;color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6;background:#fff}
-    img{display:block;max-width:100%}
-    a{color:inherit}
-    .nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px clamp(14px,4vw,48px);background:rgba(255,255,255,.97);box-shadow:0 3px 18px #063b4a18}
-    .marca{display:flex;align-items:center;min-width:0;text-decoration:none}
-    .logo{width:62px;height:52px;object-fit:contain}
-    .menu{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-    .menu a{text-decoration:none;font-weight:700;font-size:.93rem}
-    .menu a:hover{color:var(--ocean)}
-    .btn-nav,.btn,.btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 17px;border-radius:999px;text-decoration:none;font-weight:800;background:var(--ocean);color:white;border:0}
-    .btn-nav{white-space:nowrap}
-    .btn:hover,.btn-nav:hover,.btn-wa:hover{filter:brightness(.92);transform:translateY(-1px)}
-    .hero{position:relative;min-height:570px;display:grid;align-items:center;overflow:hidden;background:var(--deep);color:white}
-    .hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;opacity:.72}
-    .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,33,43,.84),rgba(2,33,43,.35) 72%,rgba(2,33,43,.12))}
-    .hero-texto{position:relative;z-index:1;width:min(780px,100%);padding:80px clamp(22px,7vw,90px)}
-    .etiqueta{display:inline-block;padding:6px 13px;border-radius:999px;background:#ffffff22;border:1px solid #ffffff66;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;font-weight:800}
-    h1{font-size:clamp(2.3rem,6vw,4.7rem);line-height:1.04;margin:14px 0 18px;max-width:800px}
-    .hero-texto>p:not(.etiqueta){font-size:clamp(1rem,2vw,1.25rem);max-width:620px}
-    .botones{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
-    .btn-claro{background:white;color:var(--deep)}
-    .seccion{padding:70px clamp(18px,5vw,70px);max-width:1450px;margin:auto}
-    .seccion h2{text-align:center;color:var(--deep);font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.15;margin:0 0 12px}
-    .intro{max-width:760px;text-align:center;margin:0 auto 32px;color:#536a6e}
-    .tarjetas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
-    .tarjeta{overflow:hidden;border-radius:18px;background:#fff;box-shadow:0 8px 28px #063b4a14;border:1px solid #e4eeee;display:flex;flex-direction:column}
-    .tarjeta>img{width:100%;height:220px;object-fit:cover;background:#e5efed}
-    .cuerpo{padding:20px;display:flex;flex-direction:column;align-items:flex-start;flex:1}
-    .cuerpo h3{margin:0 0 8px;color:var(--deep);font-size:1.25rem}
-    .cuerpo p{margin:0 0 12px}
-    .precio{font-weight:850;color:var(--ocean)}
-    .btn-wa{margin-top:auto;font-size:.92rem}
-    .sin-foto{height:120px;display:grid;place-items:center;font-size:3rem;background:linear-gradient(135deg,#d5eee4,#f7edcf)}
-    .subtitulo{margin:48px 0 18px;color:var(--deep);font-size:1.5rem}
-    .renta-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-    .servicio{padding:20px;border:1px solid #dce9e7;border-radius:15px;background:#fbfdfc;display:flex;flex-direction:column;gap:7px;min-height:190px}
-    .servicio strong{color:var(--deep);font-size:1.05rem}
-    .servicio>span{font-size:.94rem}
-    .precio-s{color:var(--ocean);font-weight:800}
-    .servicio .btn-wa{align-self:flex-start;margin-top:auto}
-    .nota{font-size:.9rem;color:#617276;margin-top:24px}
-    .seccion-oscura{max-width:none;background:var(--deep);color:white}
-    .seccion-oscura h2{color:white}
-    .seccion-oscura .intro{color:#d5e7e7}
-    .coloradas{max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
-    .coloradas img{width:100%;height:390px;object-fit:cover;border-radius:18px}
-    .coloradas li{margin:10px 0}
-    .coloradas .nota{color:#d5e7e7}
-    .transporte{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:1000px;margin:28px auto 14px}
-    .transporte img{width:100%;height:300px;object-fit:cover;border-radius:16px;background:#edf3f2}
-    .centro{text-align:center}
-    .galeria-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;max-width:1350px;margin:28px auto 0}
-    .galeria-grid img{width:100%;height:210px;object-fit:cover;border-radius:12px;background:#dce9e7;transition:transform .2s}
-    .galeria-grid img:hover{transform:scale(1.025)}
-    .contacto{text-align:center}
-    .contacto>p{max-width:700px;margin:0 auto 22px}
-    .btn-grande{font-size:1.05rem;padding:14px 24px}
-    .redes{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:25px}
-    .redes a{font-weight:800;color:var(--ocean)}
-    .pie{text-align:center;padding:24px;background:#042c37;color:#e6f2f0}
-    .pie p{margin:0}
-    .flotante{position:fixed;right:17px;bottom:17px;z-index:30;padding:13px 18px;border-radius:999px;background:#168b55;color:white;text-decoration:none;font-weight:850;box-shadow:0 5px 20px #0003}
-    @media(max-width:950px){.menu{gap:10px}.menu a{font-size:.82rem}.tarjetas{grid-template-columns:repeat(2,minmax(0,1fr))}.renta-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.galeria-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    @media(max-width:650px){.nav{position:relative;flex-wrap:wrap;gap:8px;padding:8px 14px}.logo{width:48px;height:42px}.menu{order:3;width:100%;justify-content:center;gap:8px 15px}.menu a{font-size:.8rem}.btn-nav{padding:9px 13px;font-size:.85rem}.hero{min-height:530px}.hero-texto{padding:65px 22px}.seccion{padding:48px 16px}.tarjetas{grid-template-columns:1fr}.tarjeta>img{height:230px}.renta-grid{grid-template-columns:1fr 1fr;gap:10px}.servicio{padding:15px;min-height:185px}.coloradas{grid-template-columns:1fr}.coloradas img{height:260px}.transporte{grid-template-columns:1fr}.transporte img{height:250px}.galeria-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.galeria-grid img{height:155px}.subtitulo{margin-top:36px}.flotante{right:12px;bottom:12px}}
-    @media(max-width:380px){.renta-grid{grid-template-columns:1fr}.menu{gap:7px 11px}.menu a{font-size:.76rem}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#073b43">
+<meta name="description" content="Explora El Cuyo Tours: tours en lancha, Las Coloradas, pesca, bioluminiscencia, aventura, transporte privado, masajes y hospedaje en El Cuyo, Yucatán.">
+<title>Explora El Cuyo Tours | Vive El Cuyo</title>
+<style>
+:root{--ocean:#073b43;--ocean2:#0c6264;--teal:#159b91;--sand:#f6f1e7;--gold:#efc779;--ink:#17373a;--muted:#647879;--line:#dfeae6}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);line-height:1.6}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font:inherit;cursor:pointer}
+.wrap{width:min(1160px,calc(100% - 36px));margin:auto}
+section{scroll-margin-top:90px}
+.section{padding:72px 0}
+.sand{background:var(--sand)}
+.dark{background:var(--ocean);color:white}
+.eyebrow{font-size:.76rem;letter-spacing:.15em;text-transform:uppercase;font-weight:900;color:var(--teal)}
+h1,h2,h3,p{overflow-wrap:break-word}
+h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.08;letter-spacing:-.04em;margin:10px 0 16px}
+.section-head{max-width:760px;margin-bottom:30px}
+.section-head p,.muted{color:var(--muted)}
+.dark .section-head p{color:#c8dedb}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:0;border-radius:99px;background:var(--teal);color:white;padding:12px 19px;font-weight:850;transition:.2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(.96)}
+.btn.gold{background:var(--gold);color:var(--ocean)}
+.btn.outline{background:transparent;border:1px solid #ffffff9c;color:white}
+.btn.small{font-size:.82rem;padding:9px 13px}
+.topbar{background:#052e34;color:#dcebe8;font-size:.79rem;padding:7px 0}
+.topbar .wrap{display:flex;justify-content:space-between;gap:10px}
+header{position:sticky;top:0;z-index:50;background:#ffffffed;backdrop-filter:blur(14px);border-bottom:1px solid #073b4310}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.brand img{width:62px;height:62px;object-fit:contain}
+.brand strong{display:block;font-size:.9rem;color:var(--ocean);line-height:1.2}
+.brand small{display:block;font-size:.62rem;letter-spacing:.12em;font-weight:900;color:var(--teal)}
+.navlinks{display:flex;align-items:center;gap:15px;font-size:.82rem;font-weight:800}
+.navlinks a:hover{color:var(--teal)}
+.menu-btn{display:none;border:1px solid var(--line);background:white;color:var(--ocean);border-radius:30px;padding:9px 13px;font-weight:900}
+.mobile-menu{display:none}
+.hero{position:relative;min-height:630px;display:flex;align-items:center;background:var(--ocean);color:white;overflow:hidden}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.8}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#03272bf0,#03272b91 58%,#03272b15),linear-gradient(0deg,#03272b60,transparent 55%)}
+.hero-content{position:relative;z-index:1;padding:75px 0;max-width:790px}
+.hero .eyebrow{color:var(--gold)}
+.hero h1{font-size:clamp(2.8rem,7vw,5.3rem);line-height:.98;letter-spacing:-.06em;margin:18px 0 22px}
+.hero h1 span{color:var(--gold)}
+.hero p{font-size:1.1rem;max-width:650px;color:#e1eeeb}
+.actions,.pills{display:flex;gap:11px;flex-wrap:wrap}
+.pills{margin-top:25px}
+.pill{border:1px solid #ffffff60;background:#ffffff18;border-radius:99px;padding:7px 12px;font-size:.8rem}
+.quick{position:relative;z-index:2;margin-top:-28px}
+.quickgrid{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:19px;padding:19px;box-shadow:0 15px 45px #073b4316}
+.quickitem{display:flex;align-items:center;gap:10px;padding:5px 14px;border-right:1px solid var(--line)}
+.quickitem:last-child{border:0}
+.qicon{width:40px;height:40px;flex-shrink:0;border-radius:13px;background:#dff3ec;display:grid;place-items:center;font-size:1.25rem}
+.quickitem b{display:block;font-size:.87rem}
+.quickitem small{color:var(--muted);font-size:.74rem}
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.photo{position:relative}
+.photo img{width:100%;height:420px;object-fit:cover;border-radius:24px}
+.photo-note{position:absolute;right:10px;bottom:14px;background:white;border-radius:14px;padding:14px 17px;box-shadow:0 15px 45px #073b4316;max-width:230px}
+.photo-note b{display:block;color:var(--teal)}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:22px 0}
+.check{font-size:.9rem;font-weight:750}
+.check:before{content:"✓";color:var(--teal);margin-right:8px;font-weight:1000}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:white;display:flex;flex-direction:column;box-shadow:0 7px 25px #073b4309;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 15px 45px #073b4316}
+.cover{height:215px;background:linear-gradient(135deg,#dff3ec,#79c6bd);position:relative;overflow:hidden}
+.cover img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.card:hover .cover img{transform:scale(1.035)}
+.tag{position:absolute;top:13px;left:13px;background:#fffffff0;color:var(--ocean);border-radius:99px;padding:6px 10px;font-size:.72rem;font-weight:900}
+.card-body{padding:19px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:1.13rem;line-height:1.25;margin:0 0 9px}
+.card p{font-size:.88rem;color:var(--muted);margin:0 0 13px}
+.meta{font-size:.77rem;color:#536b6c;display:flex;gap:12px;flex-wrap:wrap;margin-bottom:13px}
+.price-row{border-top:1px solid var(--line);padding-top:14px;margin-top:auto;display:flex;align-items:end;justify-content:space-between;gap:10px}
+.price{font-weight:950;font-size:1.1rem;color:var(--ocean);line-height:1.3}
+.price small{display:block;font-size:.71rem;font-weight:650;color:var(--muted);margin-top:5px}
+.fine{background:#f6f8f5;border-radius:10px;padding:10px 11px!important;font-size:.77rem!important;color:#596969!important;margin:0 0 13px!important}
+.note{margin-top:20px;background:#fff5df;border:1px solid #ecd49b;color:#60491e;border-radius:14px;padding:15px 18px;font-size:.87rem}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.feature{border:1px solid #ffffff20;background:#ffffff0c;border-radius:17px;padding:20px}
+.feature .emoji{font-size:1.7rem}
+.feature h3{font-size:1rem;margin:9px 0 5px}
+.feature p{font-size:.83rem;color:#c5ddda;margin:0}
+.transport{display:grid;grid-template-columns:.85fr 1.15fr;gap:30px;align-items:stretch}
+.transport-photo{width:100%;height:100%;min-height:400px;object-fit:cover;border-radius:22px}
+.routes{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.route{border:1px solid var(--line);border-radius:12px;padding:12px;display:flex;justify-content:space-between;gap:8px;align-items:center;background:white}
+.route span{font-size:.82rem;font-weight:750}
+.route b{color:var(--teal);white-space:nowrap}
+.route-note{font-size:.8rem;color:var(--muted);margin:15px 0}
+.wellness{display:grid;grid-template-columns:.85fr 1.15fr;gap:32px;align-items:start}
+.wellness>img{width:100%;height:100%;min-height:400px;object-fit:cover;border-radius:22px}
+.massages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.massage{background:white;border:1px solid var(--line);border-radius:14px;padding:15px}
+.massage h3{font-size:.98rem;margin:0 0 5px}
+.massage p{font-size:.84rem;color:var(--muted);margin:0}
+.massage b{color:var(--teal)}
+.band{background:linear-gradient(120deg,#0c6867,var(--ocean));border-radius:24px;padding:34px;display:flex;justify-content:space-between;align-items:center;gap:25px;color:white}
+.band h2{font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.1;margin:0 0 9px}
+.band p{color:#d2e6e3;margin:0}
+.faq{max-width:850px}
+.faq details{border-bottom:1px solid #dce7e4;padding:17px 0}
+.faq summary{cursor:pointer;font-weight:850;list-style:none;display:flex;justify-content:space-between;gap:15px}
+.faq summary:after{content:"+";font-size:1.3rem;color:var(--teal)}
+.faq details[open] summary:after{content:"−"}
+.faq details p{color:var(--muted);margin:10px 0 0}
+footer{background:#052e34;color:white;padding:48px 0 20px}
+.footgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:30px}
+footer .brand strong{color:white}
+footer p,footer a{color:#c2d8d5;font-size:.87rem}
+footer h3{font-size:1rem;margin:0 0 12px}
+.footlinks{display:grid;gap:8px}
+.copyright{border-top:1px solid #ffffff22;margin-top:28px;padding-top:17px;color:#9bbab6;font-size:.76rem;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.float{position:fixed;right:17px;bottom:17px;z-index:60;background:#20bd67;color:white;border-radius:99px;padding:12px 16px;font-weight:900;box-shadow:0 9px 25px #0003}
+@media(max-width:1050px){
+.navlinks{gap:9px;font-size:.75rem}
+.navlinks .hide-tablet{display:none}
+.cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+.quickgrid{grid-template-columns:repeat(2,1fr);gap:8px}
+.quickitem:nth-child(2){border:0}
+.quickitem:nth-child(n+3){border-top:1px solid var(--line);padding-top:13px}
+.features{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+.wrap{width:calc(100% - 28px)}
+.section{padding:55px 0}
+.topbar .secondary{display:none}
+.nav{min-height:66px}
+.brand img{width:50px;height:50px}
+.brand strong{font-size:.8rem}
+.brand small{font-size:.53rem}
+.navlinks,.nav>.btn{display:none}
+.menu-btn{display:block}
+.mobile-menu{position:absolute;top:66px;left:0;right:0;background:white;padding:10px 20px 20px;box-shadow:0 15px 45px #073b4316}
+.mobile-menu.open{display:grid}
+.mobile-menu a{padding:11px 4px;border-bottom:1px solid var(--line);font-weight:800}
+.hero{min-height:590px}
+.hero-content{padding:60px 0}
+.hero h1{font-size:clamp(2.6rem,12vw,4.2rem)}
+.hero p{font-size:1rem}
+.quickgrid{padding:12px}
+.quickitem{padding:8px}
+.qicon{width:34px;height:34px}
+.intro,.transport,.wellness{grid-template-columns:1fr;gap:25px}
+.photo img{height:320px}
+.transport-photo,.wellness>img{min-height:0;height:300px}
+.cards{grid-template-columns:1fr}
+.cover{height:230px}
+.features{grid-template-columns:1fr 1fr}
+.band{padding:25px;align-items:flex-start;flex-direction:column}
+.footgrid{grid-template-columns:1fr;gap:25px}
+}
+@media(max-width:420px){
+.topbar{font-size:.72rem}
+.brand{gap:6px}
+.brand img{width:44px;height:44px}
+.brand strong{font-size:.73rem}
+.brand small{font-size:.49rem}
+.hero .actions .btn{width:100%}
+.quickgrid{grid-template-columns:1fr}
+.quickitem,.quickitem:nth-child(2),.quickitem:nth-child(n+3){border:0;border-bottom:1px solid var(--line);padding:9px}
+.quickitem:last-child{border:0}
+.checks,.routes,.massages{grid-template-columns:1fr}
+.features{grid-template-columns:1fr}
+.price-row{align-items:flex-start;flex-direction:column}
+.price-row .btn{width:100%}
+.float{right:10px;bottom:10px;padding:10px 13px;font-size:.85rem}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
 </head>
 <body>
-<header class="nav" id="inicio">
-  <a href="#inicio" class="marca" aria-label="Inicio"><img src="logo.png" alt="Explora El Cuyo Tours" class="logo"></a>
-  <nav class="menu" aria-label="Principal">
-    <a href="#experiencias">Experiencias</a><a href="#coloradas">Las Coloradas</a><a href="#transporte">Transporte</a><a href="#hospedaje">Hospedaje</a><a href="#contacto">Contacto</a>
-  </nav>
-  <a class="btn-nav" href="https://wa.me/5219841858200" target="_blank" rel="noopener">WhatsApp</a>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>🌊 El Cuyo, Yucatán · Golfo de México</span>
+    <span class="secondary">Experiencias locales · Atención por WhatsApp</span>
+  </div>
+</div>
+
+<header>
+<nav class="nav wrap" aria-label="Navegación principal">
+  <a class="brand" href="#inicio">
+    <img src="logo.png" alt="Logotipo Explora El Cuyo Tours">
+    <span><strong>EXPLORA EL CUYO</strong><small>TOURS · EXPERIENCIAS</small></span>
+  </a>
+  <div class="navlinks">
+    <a href="#tours">Tours</a><a href="#aventura">Aventura</a>
+    <a href="#transporte">Transporte</a><a href="#bienestar">Masajes</a>
+    <a class="hide-tablet" href="#hospedaje">Hospedaje</a><a href="#contacto">Contacto</a>
+  </div>
+  <a class="btn small" href="https://wa.me/5219841858200?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20Explora%20El%20Cuyo%20Tours" target="_blank" rel="noopener">Reservar ↗</a>
+  <button class="menu-btn" id="menuButton" aria-expanded="false" aria-controls="mobileMenu">☰ Menú</button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#tours">Tours y excursiones</a><a href="#aventura">Aventura y naturaleza</a>
+  <a href="#transporte">Transporte privado</a><a href="#bienestar">Masajes y bienestar</a>
+  <a href="#hospedaje">Hospedaje</a><a href="#contacto">Contacto y reservaciones</a>
+</div>
 </header>
 
-<section class="hero">
-  <img src="hero-coloradas.jpg" alt="Las Coloradas, Yucatán" fetchpriority="high">
-  <div class="hero-texto">
-    <p class="etiqueta">El Cuyo · Yucatán · Golfo de México</p>
-    <h1>El Cuyo se vive mejor cuando lo descubres de cerca</h1>
-    <p>Lanchas, pesca, kitesurf, cuatrimotos, naturaleza y la ruta a Las Coloradas, con atención cercana y personalizada.</p>
-    <div class="botones"><a class="btn" href="#experiencias">Ver experiencias</a><a class="btn btn-claro" href="https://wa.me/5219841858200" target="_blank" rel="noopener">Consultar por WhatsApp</a></div>
-  </div>
+<main>
+<section class="hero" id="inicio">
+  <img class="hero-bg" src="hero-coloradas.jpg" alt="Paisaje de Las Coloradas">
+  <div class="wrap"><div class="hero-content">
+    <div class="eyebrow">Tu próxima aventura comienza aquí</div>
+    <h1>Descubre el lado más <span>extraordinario</span> de El Cuyo.</h1>
+    <p>Mar, lagunas, naturaleza, aventura y experiencias locales. Descubre la belleza de la costa de Yucatán con personas que conocen este lugar.</p>
+    <div class="actions">
+      <a class="btn gold" href="#tours">Explorar experiencias ↓</a>
+      <a class="btn outline" href="https://wa.me/5219841858200?text=Hola%2C%20quiero%20ayuda%20para%20elegir%20un%20tour" target="_blank" rel="noopener">Hablar con un asesor</a>
+    </div>
+    <div class="pills"><span class="pill">🚤 Tours en lancha</span><span class="pill">🌌 Bioluminiscencia</span><span class="pill">🏝️ Las Coloradas</span><span class="pill">🛻 Aventura</span></div>
+  </div></div>
 </section>
 
-<section id="experiencias" class="seccion">
-  <h2>Experiencias</h2><p class="intro">Elige una experiencia y escríbenos para confirmar horarios y disponibilidad.</p>
-  <div class="tarjetas">
-    <article class="tarjeta"><img src="tour-bote-grupo.jpg" alt="Paseo en bote por la laguna" loading="lazy"><div class="cuerpo"><h3>Paseo en bote</h3><p>Recorrido en lancha por la laguna y los manglares, con paradas para disfrutar la naturaleza.</p><p class="precio">Ría Lagartos: $3,500 MXN (1 a 6 personas)</p><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20informaci%C3%B3n%20del%20paseo%20en%20bote" target="_blank" rel="noopener">Consultar</a></div></article>
-    <article class="tarjeta"><img src="tour-pesca.jpg" alt="Pesca recreativa" loading="lazy"><div class="cuerpo"><h3>Pesca</h3><p>Pesca recreativa desde lancha, con capitán local.</p><p class="precio">$6,000 MXN (hasta 6 personas)</p><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20informaci%C3%B3n%20del%20tour%20de%20pesca" target="_blank" rel="noopener">Consultar</a></div></article>
-    <article class="tarjeta"><img src="tour-bote-ancla.jpg" alt="Naturaleza y recorrido en lancha" loading="lazy"><div class="cuerpo"><h3>Avistamiento de aves</h3><p>Recorrido en lancha para observar aves y fauna de la laguna y los manglares.</p><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20informaci%C3%B3n%20del%20avistamiento%20de%20aves" target="_blank" rel="noopener">Consultar</a></div></article>
-    <article class="tarjeta"><img src="tour-kite.jpg" alt="Kitesurf en El Cuyo" loading="lazy"><div class="cuerpo"><h3>Kitesurf</h3><p>Clases y renta de equipo de kitesurf en la playa.</p><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20informaci%C3%B3n%20de%20clases%20de%20kitesurf" target="_blank" rel="noopener">Consultar</a></div></article>
-    <article class="tarjeta"><img src="tour-utv-grupo.jpg" alt="Recorrido en UTV" loading="lazy"><div class="cuerpo"><h3>Cuatrimotos y UTV</h3><p>Recorridos guiados por caminos y paisajes de la zona.</p><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20informaci%C3%B3n%20de%20cuatrimotos" target="_blank" rel="noopener">Consultar</a></div></article>
-    <article class="tarjeta"><img src="h09-atv-laguna.jpg" alt="Aventura en cuatrimoto" loading="lazy"><div class="cuerpo"><h3>La UMA</h3><p>Recorrido en cuatrimoto por un rancho de unas 30 hectáreas, a 15 minutos de El Cuyo. Duración aproximada: 2.5 horas.</p><p class="precio">$1,800 MXN por tour (una moto para 2 personas)</p><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20informaci%C3%B3n%20del%20tour%20a%20La%20UMA" target="_blank" rel="noopener">Consultar</a></div></article>
-    <article class="tarjeta"><img src="galeria-grupo-mar.jpg" alt="Playa y naturaleza de El Cuyo" loading="lazy"><div class="cuerpo"><h3>Bioluminiscencia</h3><p>Salida nocturna en cuatrimoto hacia una playa tranquila, lejos de las luces del pueblo. La experiencia depende de las condiciones naturales.</p><p class="precio">$850 MXN por persona</p><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20informaci%C3%B3n%20del%20tour%20de%20bioluminiscencia" target="_blank" rel="noopener">Consultar</a></div></article>
-  </div>
+<div class="quick"><div class="wrap quickgrid">
+  <div class="quickitem"><span class="qicon">🌿</span><span><b>Naturaleza auténtica</b><small>Explora paisajes únicos</small></span></div>
+  <div class="quickitem"><span class="qicon">🚤</span><span><b>Experiencias locales</b><small>Excursiones y aventuras</small></span></div>
+  <div class="quickitem"><span class="qicon">🚐</span><span><b>Traslados privados</b><small>Tarifas solo de ida</small></span></div>
+  <div class="quickitem"><span class="qicon">💬</span><span><b>Atención directa</b><small>Reserva por WhatsApp</small></span></div>
+</div></div>
 
-  <h3 class="subtitulo">Renta de equipo</h3>
-  <div class="renta-grid">
-    <div class="servicio"><strong>Paddle board</strong><span>Renta por 2 horas</span><span class="precio-s">$500 MXN</span><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20rentar%20un%20paddle%20board" target="_blank" rel="noopener">Consultar</a></div>
-    <div class="servicio"><strong>Kayak</strong><span>Renta por 2 horas</span><span class="precio-s">$600 MXN</span><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20rentar%20un%20kayak" target="_blank" rel="noopener">Consultar</a></div>
-    <div class="servicio"><strong>Cuatrimotos</strong><span>Renta por vehículo</span><span class="precio-s">Consulta disponibilidad</span><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20rentar%20cuatrimotos" target="_blank" rel="noopener">Consultar</a></div>
-    <div class="servicio"><strong>Bicicletas</strong><span>Renta</span><span class="precio-s">Consulta disponibilidad</span><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20rentar%20bicicletas" target="_blank" rel="noopener">Consultar</a></div>
-    <div class="servicio"><strong>Windfoil</strong><span>Renta de equipo</span><span class="precio-s">Consulta disponibilidad</span><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20informes%20de%20windfoil" target="_blank" rel="noopener">Consultar</a></div>
-    <div class="servicio"><strong>Kitesurf</strong><span>Renta de equipo</span><span class="precio-s">Consulta disponibilidad</span><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20informes%20de%20renta%20de%20kitesurf" target="_blank" rel="noopener">Consultar</a></div>
-    <div class="servicio"><strong>Carros de golf</strong><span>Para recorrer El Cuyo</span><span class="precio-s">Consulta disponibilidad</span><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20informes%20de%20carros%20de%20golf" target="_blank" rel="noopener">Consultar</a></div>
-    <div class="servicio"><strong>Renta de vehículos</strong><span>Para explorar la región</span><span class="precio-s">Consulta disponibilidad</span><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20informes%20de%20renta%20de%20veh%C3%ADculos" target="_blank" rel="noopener">Consultar</a></div>
+<section class="section"><div class="wrap intro">
+  <div>
+    <div class="eyebrow">Mucho más que un destino</div>
+    <h2>El Cuyo se vive, se siente y se recuerda.</h2>
+    <p>Te ayudamos a descubrir experiencias en el mar, recorrer paisajes naturales, conocer lugares especiales y organizar tu estancia en El Cuyo, Yucatán.</p>
+    <p>Ya sea una salida en lancha, una aventura en cuatrimoto o una noche bajo el cielo estrellado, te ayudamos a encontrar una experiencia para ti.</p>
+    <div class="checks"><span class="check">Atención personalizada</span><span class="check">Actividades variadas</span><span class="check">Opciones para parejas</span><span class="check">Experiencias en grupo</span></div>
+    <a class="btn" href="https://wa.me/5219841858200?text=Hola%2C%20quiero%20organizar%20mis%20actividades%20en%20El%20Cuyo" target="_blank" rel="noopener">Planea tu visita ↗</a>
   </div>
+  <div class="photo"><img src="tour-aves.jpg" alt="Aves y naturaleza en los alrededores de El Cuyo" loading="lazy"><div class="photo-note"><b>El Cuyo, Yucatán</b>Un destino para conectar con la naturaleza.</div></div>
+</div></section>
 
-  <h3 class="subtitulo">Tours, clases y servicios</h3>
-  <div class="renta-grid">
-    <div class="servicio"><strong>Paddle board con guía</strong><span>Recorrido guiado</span><span class="precio-s">Consulta disponibilidad</span><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20informes%20del%20tour%20en%20paddle%20board" target="_blank" rel="noopener">Consultar</a></div>
-    <div class="servicio"><strong>Kayak con guía</strong><span>Recorrido por manglares</span><span class="precio-s">Consulta disponibilidad</span><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20informes%20del%20tour%20en%20kayak" target="_blank" rel="noopener">Consultar</a></div>
-    <div class="servicio"><strong>Cuatrimotos a Las Coloradas</strong><span>Tour guiado</span><span class="precio-s">Consulta disponibilidad</span><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20informes%20del%20tour%20a%20Las%20Coloradas" target="_blank" rel="noopener">Consultar</a></div>
-    <div class="servicio"><strong>Clases de kitesurf</strong><span>Con instructor</span><span class="precio-s">Consulta disponibilidad</span><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20informes%20de%20clases%20de%20kitesurf" target="_blank" rel="noopener">Consultar</a></div>
-    <div class="servicio"><strong>Clases de windfoil</strong><span>Con instructor</span><span class="precio-s">Consulta disponibilidad</span><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20informes%20de%20clases%20de%20windfoil" target="_blank" rel="noopener">Consultar</a></div>
-    <div class="servicio"><strong>Masajes</strong><span>En tu hospedaje o en la playa</span><span class="precio-s">Consulta disponibilidad</span><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20informes%20de%20masajes" target="_blank" rel="noopener">Consultar</a></div>
-    <div class="servicio"><strong>Transportación privada</strong><span>Hasta 7 pasajeros</span><span class="precio-s">$3,600 MXN</span><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20cotizar%20transportaci%C3%B3n%20privada" target="_blank" rel="noopener">Consultar</a></div>
-    <div class="servicio"><strong>Sesiones y experiencias especiales</strong><span>Cenas románticas, pedidas de mano y fotos</span><span class="precio-s">Cotización personalizada</span><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20informes%20de%20experiencias%20especiales" target="_blank" rel="noopener">Consultar</a></div>
+<section class="section sand" id="tours"><div class="wrap">
+  <div class="section-head"><div class="eyebrow">Descubre nuestras experiencias</div><h2>Encuentra tu próxima aventura.</h2><p>Elige una actividad y escríbenos para confirmar disponibilidad, horarios, punto de salida y detalles antes de reservar.</p></div>
+  <div class="cards">
+
+    <article class="card"><div class="cover"><img src="hero-coloradas.jpg" alt="Lagunas de Las Coloradas" loading="lazy"><span class="tag">Paisajes únicos</span></div><div class="card-body">
+      <h3>Las Coloradas en lancha</h3><p>Recorre los alrededores de las salineras y descubre los paisajes naturales de esta zona costera.</p><div class="meta"><span>🚤 Lancha</span><span>👥 1–6 personas</span></div>
+      <p class="fine">La entrada al Parque Turístico Las Coloradas no está incluida. Si deseas ingresar, consulta la tarifa vigente de taquilla.</p>
+      <div class="price-row"><div class="price">$5,500–$6,500 MXN<small>Por grupo de 1–6 personas</small></div><a class="btn small" href="https://wa.me/5219841858200?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20tour%20en%20lancha%20a%20Las%20Coloradas" target="_blank" rel="noopener">Consultar</a></div>
+    </div></article>
+
+    <article class="card"><div class="cover"><img src="tour-bote-grupo.jpg" alt="Paseo en lancha" loading="lazy"><span class="tag">Agua y naturaleza</span></div><div class="card-body">
+      <h3>Ría Lagartos en lancha</h3><p>Disfruta un recorrido por la ría, observa la flora y fauna local y conoce los paisajes de la región.</p><div class="meta"><span>🚤 Paseo en lancha</span><span>👥 1–6 personas</span></div>
+      <div class="price-row"><div class="price">$3,500 MXN<small>Por grupo de 1–6 personas</small></div><a class="btn small" href="https://wa.me/5219841858200?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20R%C3%ADa%20Lagartos" target="_blank" rel="noopener">Consultar</a></div>
+    </div></article>
+
+    <article class="card"><div class="cover"><img src="tour-pesca-clientes.jpg" alt="Pesca en el mar" loading="lazy"><span class="tag">Para madrugadores</span></div><div class="card-body">
+      <h3>Pesca artesanal</h3><p>Sal al mar con la primera luz del día y disfruta una experiencia de pesca en la costa.</p><div class="meta"><span>🎣 Pesca</span><span>🕠 Horario por confirmar</span></div>
+      <div class="price-row"><div class="price">$6,000 MXN<small>Por grupo de hasta 6 personas</small></div><a class="btn small" href="https://wa.me/5219841858200?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20pesca%20artesanal" target="_blank" rel="noopener">Consultar</a></div>
+    </div></article>
+
+    <article class="card"><div class="cover"><img src="tour-bote-ancla.jpg" alt="Excursión en lancha" loading="lazy"><span class="tag">Excursión de día</span></div><div class="card-body">
+      <h3>Holbox, Yalahau y Punta Mosquito</h3><p>Disfruta aguas tranquilas, paisajes naturales y una visita a la isla de Holbox.</p><div class="meta"><span>🚤 Excursión</span><span>👥 Hasta 6 personas</span></div>
+      <p class="fine">La entrada a Yalahau, si aplica, se paga aparte. Confirma itinerario y tarifas al reservar.</p>
+      <div class="price-row"><div class="price">$6,500 MXN<small>Precio base hasta 6 personas</small></div><a class="btn small" href="https://wa.me/5219841858200?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20tour%20a%20Holbox%2C%20Yalahau%20y%20Punta%20Mosquito" target="_blank" rel="noopener">Consultar</a></div>
+    </div></article>
+
+    <article class="card"><div class="cover"><img src="tour-utv-grupo.jpg" alt="Vehículo todoterreno" loading="lazy"><span class="tag">Aventura terrestre</span></div><div class="card-body">
+      <h3>Cuatrimoto hacia Las Coloradas</h3><p>Disfruta un recorrido hacia Las Coloradas en cuatrimoto y contempla los paisajes de la región.</p><div class="meta"><span>🏍️ Cuatrimoto</span><span>Capacidad por confirmar</span></div>
+      <p class="fine">La entrada al Parque Turístico Las Coloradas no está incluida. Consulta disponibilidad y tarifa de taquilla vigente.</p>
+      <div class="price-row"><div class="price">$3,650 MXN<small>Precio de referencia; confirmar capacidad</small></div><a class="btn small" href="https://wa.me/5219841858200?text=Hola%2C%20quiero%20cotizar%20la%20cuatrimoto%20a%20Las%20Coloradas" target="_blank" rel="noopener">Consultar</a></div>
+    </div></article>
+
+    <article class="card"><div class="cover"><img src="g11-atv-fila.jpg" alt="Cuatrimotos en un camino natural" loading="lazy"><span class="tag">Naturaleza y aventura</span></div><div class="card-body">
+      <h3>UMA San Manuel en cuatrimoto</h3><p>Recorre caminos naturales en una experiencia de aventura en la UMA San Manuel.</p><div class="meta"><span>⏱️ 2–2.5 h aprox.</span><span>🏍️ Cuatrimoto</span></div>
+      <div class="price-row"><div class="price">$1,800 MXN<small>Por cuatrimoto para 2 personas</small></div><a class="btn small" href="https://wa.me/5219841858200?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20la%20UMA%20San%20Manuel" target="_blank" rel="noopener">Consultar</a></div>
+    </div></article>
+
+    <article class="card"><div class="cover"><img src="galeria-grupo-mar.jpg" alt="Playa y mar al anochecer" loading="lazy"><span class="tag">Experiencia nocturna</span></div><div class="card-body">
+      <h3>Tour de bioluminiscencia</h3><p>Descubre el fenómeno de la bioluminiscencia en una playa apartada, con guía y traslado en cuatrimoto desde tu hospedaje.</p><div class="meta"><span>⏱️ 2 h aprox.</span><span>🕣 8:30 o 9:30 pm</span></div>
+      <p class="fine">La intensidad depende de las condiciones naturales y no se puede garantizar. Confirma horario y disponibilidad.</p>
+      <div class="price-row"><div class="price">$850 MXN<small>Por persona</small></div><a class="btn small" href="https://wa.me/5219841858200?text=Hola%2C%20quiero%20reservar%20el%20tour%20de%20bioluminiscencia" target="_blank" rel="noopener">Consultar</a></div>
+    </div></article>
   </div>
-  <p class="nota">Algunos precios pueden variar según temporada, fecha y número de personas. Escríbenos para confirmar disponibilidad y detalles.</p>
-</section>
+  <div class="note"><strong>Importante:</strong> los precios y las actividades están sujetos a disponibilidad. Confirma por WhatsApp el precio final, qué incluye cada experiencia, horarios y costos adicionales antes de reservar.</div>
+</div></section>
 
-<section id="coloradas" class="seccion seccion-oscura">
-  <h2>Las Coloradas</h2><p class="intro">Lagunas rosas, salinas y paisajes abiertos en la costa de Yucatán.</p>
-  <div class="coloradas">
-    <img src="g07-pareja-coloradas.jpg" alt="Visita a Las Coloradas" loading="lazy">
-    <div><p>Salimos desde El Cuyo y te ayudamos a organizar la ruta. Puedes consultar opciones en lancha o en vehículo de aventura.</p>
-      <ul><li>Tour en lancha: $5,500 a $6,500 MXN (1 a 6 personas)</li><li>Tubular o buggy: $1,500 MXN por persona (1 a 3 personas) o $1,350 MXN por persona (3 o más)</li></ul>
-      <p class="nota">La entrada al parque no está incluida.</p>
-      <a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20informaci%C3%B3n%20del%20tour%20a%20Las%20Coloradas" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+<section class="section dark" id="aventura"><div class="wrap">
+  <div class="section-head"><div class="eyebrow">Muévete a tu manera</div><h2>Aventura, mar y libertad.</h2><p>Consulta disponibilidad y organiza actividades para disfrutar El Cuyo a tu ritmo.</p></div>
+  <div class="cards">
+    <article class="card"><div class="cover"><img src="tour-kite.jpg" alt="Kitesurf en El Cuyo" loading="lazy"></div><div class="card-body"><h3>Kitesurf y clases</h3><p>Consulta opciones de clases, equipo y disponibilidad según tu nivel.</p><div class="price-row"><div class="price">Cotización<small>Según clase y equipo</small></div><a class="btn small" href="https://wa.me/5219841858200?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20kitesurf" target="_blank" rel="noopener">Preguntar</a></div></div></article>
+    <article class="card"><div class="cover"><img src="h02-sup.jpg" alt="Paddleboard en el agua" loading="lazy"></div><div class="card-body"><h3>Paddleboard</h3><p>Disfruta el agua a tu ritmo con una tabla de paddleboard.</p><div class="price-row"><div class="price">$500 MXN<small>Renta por 2 horas</small></div><a class="btn small" href="https://wa.me/5219841858200?text=Hola%2C%20quiero%20rentar%20paddleboard" target="_blank" rel="noopener">Reservar</a></div></div></article>
+    <article class="card"><div class="cover"><img src="h03-kayak-1.jpg" alt="Kayak en un paisaje natural" loading="lazy"></div><div class="card-body"><h3>Kayak</h3><p>Explora el agua tranquilamente y disfruta el paisaje desde otra perspectiva.</p><div class="price-row"><div class="price">$600 MXN<small>Renta por 2 horas</small></div><a class="btn small" href="https://wa.me/5219841858200?text=Hola%2C%20quiero%20rentar%20kayak" target="_blank" rel="noopener">Reservar</a></div></div></article>
+    <article class="card"><div class="cover"><img src="h04-kayak-2.jpg" alt="Kayak en la naturaleza" loading="lazy"></div><div class="card-body"><h3>Kayak en la UMA San Manuel</h3><p>Una experiencia de aproximadamente dos horas en la laguna de la UMA. Consulta si hay traslado disponible.</p><div class="price-row"><div class="price">$950 MXN<small>Confirma si incluye traslado</small></div><a class="btn small" href="https://wa.me/5219841858200?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20kayak%20en%20la%20UMA" target="_blank" rel="noopener">Consultar</a></div></div></article>
+  </div>
+</div></section>
+
+<section class="section" id="transporte"><div class="wrap">
+  <div class="section-head"><div class="eyebrow">Viaja con comodidad</div><h2>Transporte privado desde El Cuyo.</h2><p>Organiza tu traslado entre El Cuyo, aeropuertos y otros destinos de la península.</p></div>
+  <div class="transport">
+    <div><img class="transport-photo" src="g06-van-grupo.jpg" alt="Vehículo para transporte privado" loading="lazy"></div>
+    <div>
+      <h3>Rutas con tarifa de referencia</h3>
+      <p class="muted"><strong>Todas las tarifas publicadas son únicamente de ida.</strong> El regreso se cotiza por separado. Servicio para hasta 4 pasajeros, sujeto a confirmación.</p>
+      <div class="routes">
+        <div class="route"><span>Cancún ciudad</span><b>$3,200</b></div>
+        <div class="route"><span>Aeropuerto Cancún</span><b>$3,400</b></div>
+        <div class="route"><span>Zona Hotelera Cancún</span><b>$3,600</b></div>
+        <div class="route"><span>Playa del Carmen</span><b>$3,200</b></div>
+        <div class="route"><span>Tulum</span><b>$3,200</b></div>
+        <div class="route"><span>Aeropuerto Tulum</span><b>$3,400</b></div>
+        <div class="route"><span>Mérida ciudad</span><b>$3,700</b></div>
+        <div class="route"><span>Aeropuerto Mérida</span><b>$3,900</b></div>
+        <div class="route"><span>Valladolid</span><b>$2,200</b></div>
+        <div class="route"><span>Río Lagartos</span><b>$2,000</b></div>
+      </div>
+      <p class="route-note"><strong>Precios en MXN, únicamente de ida.</strong> El regreso se cotiza por separado. Para grupos de 8–12 pasajeros, consulta disponibilidad de van y tarifa. Confirma equipaje, punto de recogida, horario y capacidad del vehículo.</p>
+      <a class="btn" href="https://wa.me/5219841858200?text=Hola%2C%20quiero%20cotizar%20transporte%20privado.%20Origen%3A%20____.%20Destino%3A%20____.%20Personas%3A%20____.%20Fecha%3A%20____.%20Necesito%3A%20solo%20ida%20%2F%20ida%20y%20regreso." target="_blank" rel="noopener">Cotizar mi traslado ↗</a>
     </div>
   </div>
-</section>
+</div></section>
 
-<section id="transporte" class="seccion">
-  <h2>Transportación privada</h2><p class="intro">Traslados cómodos para grupos, con capacidad para hasta 7 pasajeros. Consulta tu ruta y fecha.</p>
-  <div class="transporte"><img src="g13-auto-playa.jpg" alt="Vehículo para transportación" loading="lazy"><img src="g06-van-grupo.jpg" alt="Transporte para grupos" loading="lazy"></div>
-  <p class="precio centro">$3,600 MXN por viaje</p><div class="centro"><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20cotizar%20transportaci%C3%B3n%20privada" target="_blank" rel="noopener">Cotizar transporte</a></div>
-</section>
-
-<section id="hospedaje" class="seccion">
-  <h2>Renta de casas y hospedaje</h2><p class="intro">Casas y departamentos para vacacionar en El Cuyo. Escríbenos con tus fechas y número de personas.</p>
-  <div class="renta-grid">
-    <div class="servicio"><strong>Renta de casas</strong><span>Para grupos o familias</span><span class="precio-s">Consulta opciones</span><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20informes%20de%20renta%20de%20casas" target="_blank" rel="noopener">Pedir información</a></div>
-    <div class="servicio"><strong>Departamentos</strong><span>Frente a la playa o cerca de ella</span><span class="precio-s">Consulta opciones</span><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20informes%20de%20departamentos" target="_blank" rel="noopener">Pedir información</a></div>
-    <div class="servicio"><strong>Glamping</strong><span>Alojamiento cerca de la playa</span><span class="precio-s">Consulta opciones</span><a class="btn-wa" href="https://wa.me/5219841858200?text=Hola%2C%20quisiera%20informes%20del%20glamping" target="_blank" rel="noopener">Pedir información</a></div>
+<section class="section sand" id="bienestar"><div class="wrap">
+  <div class="section-head"><div class="eyebrow">Tu momento de bienestar</div><h2>Regálate una pausa.</h2><p>Consulta servicios de masaje a domicilio disponibles en El Cuyo.</p></div>
+  <div class="wellness">
+    <img src="h06-pareja-flamencos.jpg" alt="Pareja disfrutando de la naturaleza" loading="lazy">
+    <div class="massages">
+      <div class="massage"><h3>Masaje relajante</h3><p>60 min <b>$1,200</b><br>75 min <b>$1,500</b><br>90 min <b>$1,800</b></p></div>
+      <div class="massage"><h3>Descontracturante</h3><p>60 min <b>$1,300</b><br>75 min <b>$1,600</b><br>90 min <b>$1,900</b></p></div>
+      <div class="massage"><h3>Masaje deportivo</h3><p>60 min <b>$1,300</b><br>75 min <b>$1,600</b><br>90 min <b>$1,900</b></p></div>
+      <div class="massage"><h3>Piedras calientes</h3><p>60 min <b>$1,400</b><br>75 min <b>$1,700</b><br>90 min <b>$2,000</b></p></div>
+      <div class="massage"><h3>Tejido profundo</h3><p>60 min <b>$1,400</b><br>75 min <b>$1,700</b><br>90 min <b>$2,000</b></p></div>
+      <div class="massage"><h3>Drenaje linfático</h3><p>60 min <b>$1,500</b><br>90 min <b>$1,800</b></p></div>
+      <div class="massage"><h3>Reflexología</h3><p>60 min <b>$1,100</b></p></div>
+      <div class="massage"><h3>Electroterapia / electromasaje</h3><p>60 min <b>$1,000</b><br>80 min <b>$1,200</b></p></div>
+    </div>
   </div>
-</section>
+  <p class="muted">Precios en MXN. Servicio sujeto a disponibilidad y confirmación.</p>
+  <a class="btn" href="https://wa.me/5219841858200?text=Hola%2C%20quiero%20consultar%20masajes%20a%20domicilio%20en%20El%20Cuyo" target="_blank" rel="noopener">Consultar masajes ↗</a>
+</div></section>
 
-<section class="seccion seccion-oscura">
-  <h2>Momentos de El Cuyo</h2><p class="intro">Aventura, mar y naturaleza para recordar tu visita.</p>
-  <div class="galeria-grid">
-    <img src="galeria-grupo-mar.jpg" alt="Grupo disfrutando del mar" loading="lazy">
-    <img src="g02-kite-1.jpg" alt="Kitesurf en El Cuyo" loading="lazy"><img src="g03-kite-2.jpg" alt="Kitesurf y mar" loading="lazy"><img src="g04-kite-3.jpg" alt="Deporte de viento" loading="lazy">
-    <img src="g05-bote-clientes.jpg" alt="Paseo en bote con visitantes" loading="lazy"><img src="g06-van-grupo.jpg" alt="Transporte de grupo" loading="lazy"><img src="g07-pareja-coloradas.jpg" alt="Visita a Las Coloradas" loading="lazy"><img src="g08-atv-coloradas.jpg" alt="Aventura en cuatrimoto" loading="lazy">
-    <img src="g09-utv-grupo.jpg" alt="Grupo en UTV" loading="lazy"><img src="g11-atv-fila.jpg" alt="Cuatrimotos en ruta" loading="lazy"><img src="g12-banana-1.jpg" alt="Actividad acuática" loading="lazy"><img src="g13-auto-playa.jpg" alt="Vehículo en la playa" loading="lazy"><img src="g14-banana-2.jpg" alt="Diversión en el agua" loading="lazy">
-    <img src="h02-sup.jpg" alt="Paddle board" loading="lazy"><img src="h03-kayak-1.jpg" alt="Kayak" loading="lazy"><img src="h04-kayak-2.jpg" alt="Paseo en kayak" loading="lazy"><img src="h06-pareja-flamencos.jpg" alt="Naturaleza y flamencos" loading="lazy">
-    <img src="h07-utv-logo.jpg" alt="UTV en El Cuyo" loading="lazy"><img src="h08-utv-grupo.jpg" alt="Grupo en aventura UTV" loading="lazy"><img src="h09-atv-laguna.jpg" alt="Cuatrimoto junto a la laguna" loading="lazy"><img src="h10-atv-grupo.jpg" alt="Grupo en cuatrimotos" loading="lazy">
-    <img src="hero-coloradas.jpg" alt="Las Coloradas" loading="lazy"><img src="tour-aves.jpg" alt="Aves de la región" loading="lazy"><img src="tour-bote-ancla.jpg" alt="Lancha de paseo" loading="lazy"><img src="tour-bote-chalecos.jpg" alt="Paseo en lancha" loading="lazy">
-    <img src="tour-bote-grupo.jpg" alt="Grupo en paseo en bote" loading="lazy"><img src="tour-kite.jpg" alt="Kitesurf" loading="lazy"><img src="tour-pesca-clientes.jpg" alt="Clientes en tour de pesca" loading="lazy"><img src="tour-pesca.jpg" alt="Tour de pesca" loading="lazy"><img src="tour-utv-grupo.jpg" alt="Grupo en UTV" loading="lazy">
+<section class="section" id="hospedaje"><div class="wrap">
+  <div class="band">
+    <div><div class="eyebrow" style="color:var(--gold)">Completa tu experiencia</div><h2>¿Buscas dónde hospedarte?</h2><p>Cuéntanos tus fechas y cuántas personas viajan. Te ayudamos a consultar opciones de alojamiento en El Cuyo.</p></div>
+    <a class="btn gold" href="https://wa.me/5219841858200?text=Hola%2C%20busco%20hospedaje%20en%20El%20Cuyo.%20Fechas%3A%20____.%20Personas%3A%20____." target="_blank" rel="noopener">Buscar hospedaje ↗</a>
   </div>
-</section>
+</div></section>
 
-<section id="contacto" class="seccion contacto">
-  <h2>Contacto y reservas</h2><p>Escríbenos por WhatsApp. Confirmamos horarios, disponibilidad y punto de encuentro directamente contigo.</p>
-  <a class="btn btn-grande" href="https://wa.me/5219841858200" target="_blank" rel="noopener">WhatsApp: +52 984 185 8200</a>
-  <div class="redes"><a href="https://www.facebook.com/Exploraelcuyotours" target="_blank" rel="noopener">Facebook</a><a href="https://www.instagram.com/exploraelcuyotours" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@exploraelcuyotours" target="_blank" rel="noopener">TikTok</a></div>
-</section>
-<footer class="pie"><p>Explora El Cuyo Tours · El Cuyo, Yucatán, México</p></footer>
-<a class="flotante" href="https://wa.me/5219841858200" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">WhatsApp</a>
-<script src="script.js"></script>
+<section class="section sand"><div class="wrap">
+  <div class="section-head"><div class="eyebrow">Fácil y directo</div><h2>Así puedes reservar.</h2></div>
+  <div class="features">
+    <div class="feature"><div class="emoji">💬</div><h3>1. Escríbenos</h3><p>Cuéntanos qué actividad te interesa y cuándo visitarás El Cuyo.</p></div>
+    <div class="feature"><div class="emoji">🗓️</div><h3>2. Confirma detalles</h3><p>Revisamos disponibilidad, horarios, precio y qué incluye la experiencia.</p></div>
+    <div class="feature"><div class="emoji">🤝</div><h3>3. Organiza tu salida</h3><p>Confirma el punto de encuentro o recogida según el servicio.</p></div>
+    <div class="feature"><div class="emoji">🌊</div><h3>4. Disfruta El Cuyo</h3><p>Prepárate para descubrir nuevos paisajes y vivir tu aventura.</p></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <div class="section-head"><div class="eyebrow">Antes de tu aventura</div><h2>Preguntas frecuentes.</h2></div>
+  <div class="faq">
+    <details><summary>¿Cómo puedo reservar un tour?</summary><p>Escríbenos por WhatsApp con la actividad, fecha y número de personas. Te confirmaremos disponibilidad y condiciones.</p></details>
+    <details><summary>¿Los precios son por persona o por grupo?</summary><p>Depende de la actividad. Cada experiencia indica si el precio es por persona, por renta o por grupo. Confirma el importe final antes de reservar.</p></details>
+    <details><summary>¿El transporte incluye ida y vuelta?</summary><p>No. Todas las tarifas de transporte publicadas en esta página son únicamente de ida. El regreso se cotiza por separado.</p></details>
+    <details><summary>¿La entrada a Las Coloradas está incluida?</summary><p>No. La entrada al Parque Turístico se paga aparte si decides ingresar. Consulta la tarifa vigente en taquilla.</p></details>
+    <details><summary>¿Pueden recogerme en mi hospedaje?</summary><p>En determinadas experiencias podemos coordinar la recogida. Indica el nombre de tu alojamiento y confirma si el traslado está incluido.</p></details>
+    <details><summary>¿Hay transporte para grupos grandes?</summary><p>Consulta disponibilidad de van para grupos de aproximadamente 8–12 pasajeros. La capacidad y tarifa dependen de la ruta y la fecha.</p></details>
+    <details><summary>¿La bioluminiscencia siempre se ve igual?</summary><p>No. Es un fenómeno natural cuya intensidad cambia según las condiciones ambientales.</p></details>
+  </div>
+</div></section>
+
+<section class="section dark" id="contacto"><div class="wrap">
+  <div class="band" style="background:#ffffff0c;border:1px solid #ffffff25">
+    <div><div class="eyebrow" style="color:var(--gold)">Tu aventura te espera</div><h2>Hablemos de tu próximo viaje.</h2><p>Cuéntanos qué quieres conocer en El Cuyo y te ayudamos a organizar tu experiencia.</p></div>
+    <a class="btn gold" href="https://wa.me/5219841858200?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20Explora%20El%20Cuyo%20Tours.%20Quiero%20informaci%C3%B3n." target="_blank" rel="noopener">WhatsApp · Reservaciones ↗</a>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="footgrid">
+    <div><a class="brand" href="#inicio"><img src="logo.png" alt="Logotipo Explora El Cuyo Tours"><span><strong>EXPLORA EL CUYO</strong><small>TOURS · EXPERIENCIAS</small></span></a><p>Experiencias locales, aventura y naturaleza en El Cuyo, Yucatán, México.</p></div>
+    <div><h3>Explora</h3><div class="footlinks"><a href="#tours">Tours y excursiones</a><a href="#aventura">Aventura y naturaleza</a><a href="#transporte">Transporte privado</a><a href="#bienestar">Masajes y bienestar</a><a href="#hospedaje">Hospedaje</a></div></div>
+    <div><h3>Contacto</h3><div class="footlinks"><a href="https://wa.me/5219841858200" target="_blank" rel="noopener">WhatsApp: +52 984 185 8200</a><a href="https://www.facebook.com/Exploraelcuyotours" target="_blank" rel="noopener">Facebook</a><a href="https://www.instagram.com/exploraelcuyotours/" target="_blank" rel="noopener">Instagram</a></div><p>El Cuyo, Yucatán · Golfo de México</p></div>
+  </div>
+  <div class="copyright"><span>© <span id="year"></span> Explora El Cuyo Tours. Todos los derechos reservados.</span><span>La naturaleza marca el ritmo.</span></div>
+</div></footer>
+
+<a class="float" href="https://wa.me/5219841858200?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20Explora%20El%20Cuyo%20Tours" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">☏ WhatsApp</a>
+
+<script>
+const menuButton=document.getElementById("menuButton");
+const mobileMenu=document.getElementById("mobileMenu");
+menuButton.addEventListener("click",function(){
+  const open=mobileMenu.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded",String(open));
+  menuButton.textContent=open?"✕ Cerrar":"☰ Menú";
+});
+mobileMenu.querySelectorAll("a").forEach(function(link){
+  link.addEventListener("click",function(){
+    mobileMenu.classList.remove("open");
+    menuButton.setAttribute("aria-expanded","false");
+    menuButton.textContent="☰ Menú";
+  });
+});
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
 </body>
 </html>
