@@ -1,347 +1,903 @@
+HTML
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#073f49">
-<meta name="description" content="Descubre tours, naturaleza y experiencias en El Cuyo, Yucatán. Explora El Cuyo Tours.">
-<title>Explora El Cuyo Tours | El Cuyo, Yucatán</title>
-<style>
-:root{--deep:#073f49;--teal:#078486;--sand:#f7f4eb;--ink:#18383b;--muted:#64777a;--white:#fff}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);line-height:1.55}
-a{text-decoration:none}
-.wrap{width:min(1160px,92%);margin:auto}
-.top{background:var(--deep);color:white;text-align:center;padding:8px;font-size:13px}
-header{position:sticky;top:0;z-index:10;background:#ffffffed;border-bottom:1px solid #e5ece9}
-.nav{height:70px;display:flex;align-items:center;justify-content:space-between;gap:15px}
-.brand{display:flex;align-items:center;gap:9px;color:var(--deep);font-weight:900}
-.brand img{width:45px;height:45px;object-fit:contain}
-.links{display:flex;gap:20px}
-.links a{color:var(--deep);font-weight:bold;font-size:14px}
-.btn{display:inline-block;background:var(--teal);color:white;padding:12px 18px;border-radius:30px;font-weight:bold;border:0;cursor:pointer}
-.btn:hover{filter:brightness(.92)}
-.hero{min-height:540px;display:flex;align-items:center;color:white;background:linear-gradient(90deg,#032e38e8,#073f4980),url('coloradas_flamenco_rosa.webp') center/cover}
-.hero-content{max-width:700px;padding:70px 0}
-.eyebrow{color:#bce9df;text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:bold}
-.hero h1{font-size:clamp(42px,7vw,76px);line-height:1.02;margin:15px 0}
-.hero p{font-size:18px;max-width:590px}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
-.btn.light{background:white;color:var(--deep)}
-section{padding:70px 0}
-.soft{background:var(--sand)}
-.kicker{display:inline-block;background:#e4f3ed;color:var(--teal);padding:7px 13px;border-radius:30px;font-size:12px;font-weight:bold}
-h2{font-size:clamp(30px,4vw,46px);line-height:1.1;color:var(--deep);margin:13px 0}
-.intro{color:var(--muted);max-width:720px}
-.filters{display:flex;gap:9px;overflow-x:auto;padding:20px 0;scrollbar-width:thin}
-.filter{white-space:nowrap;border:1px solid #cbded8;background:white;color:var(--deep);padding:9px 15px;border-radius:30px;font-weight:bold;cursor:pointer}
-.filter.active,.filter:hover{background:var(--deep);color:white}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{border:1px solid #e3ece8;border-radius:18px;overflow:hidden;background:white;box-shadow:0 8px 28px #073f4912;display:flex;flex-direction:column}
-.photo{height:215px;background:linear-gradient(135deg,#d7ece5,#f3e6d1);position:relative}
-.photo img{width:100%;height:100%;object-fit:cover;display:block}
-.tag{position:absolute;top:12px;left:12px;background:white;color:var(--deep);padding:5px 10px;border-radius:20px;font-size:11px;font-weight:bold}
-.cardbody{padding:18px;display:flex;flex-direction:column;flex:1}
-.card h3{margin:0 0 8px;color:var(--deep);font-size:19px}
-.card p{margin:0;color:var(--muted);font-size:14px}
-.cardbottom{display:flex;justify-content:space-between;align-items:end;gap:10px;margin-top:auto;padding-top:17px}
-.price{font-weight:bold;color:var(--deep);font-size:15px}
-.price small{display:block;color:var(--muted);font-weight:normal;font-size:11px}
-.cardbottom button{font-size:12px;padding:9px 13px}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.gallery{display:grid;grid-template-columns:1.1fr .9fr;gap:12px;align-items:center}
-.gallery img{width:100%;height:280px;object-fit:cover;border-radius:18px}
-.gallery img:last-child{height:210px;margin-top:35px}
-.values{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
-.value{background:white;border:1px solid #e3ece8;border-radius:15px;padding:17px}
-.value h3{margin:0;color:var(--deep)}
-.value p{margin:5px 0 0;color:var(--muted);font-size:13px}
-.dark{background:var(--deep);color:white}
-.dark h2{color:white}
-.dark p{color:#d7e9e5}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:25px}
-.step{border:1px solid #ffffff35;border-radius:15px;padding:20px}
-.step p{font-size:14px;margin-bottom:0}
-.notice{background:#fff4df;color:#735b28;padding:14px;border-radius:12px;margin-top:22px;font-size:13px}
-.band{background:linear-gradient(120deg,var(--teal),var(--deep));padding:30px;border-radius:22px;color:white;display:flex;justify-content:space-between;align-items:center;gap:20px}
-.band h2{color:white;margin:0 0 8px}
-.band p{margin:0;color:#e0f2ee}
-footer{background:#032f38;color:#d7e9e5;padding:40px 0 20px}
-.footgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:25px}
-footer h3,footer h4{color:white}
-footer a{display:block;color:#d7e9e5;margin:8px 0;font-size:14px}
-.copy{border-top:1px solid #ffffff35;margin-top:25px;padding-top:15px;font-size:12px}
-.modal{display:none;position:fixed;inset:0;z-index:30;background:#001e24bb;padding:15px;align-items:center;justify-content:center}
-.modal.open{display:flex}
-.panel{background:white;border-radius:20px;width:min(680px,100%);max-height:90vh;overflow:auto;padding:22px}
-.panelhead{display:flex;justify-content:space-between;gap:10px}
-.panelhead h2{font-size:25px;margin:0}
-.close{border:0;border-radius:50%;width:38px;height:38px;font-size:24px;background:#e4f3ed;color:var(--deep);cursor:pointer}
-.panelcontent{color:var(--muted);font-size:14px}
-.panelcontent h3{color:var(--deep);margin:18px 0 5px}
-.wa{position:fixed;bottom:17px;right:17px;z-index:20;box-shadow:0 5px 20px #0003}
-@media(max-width:850px){.cards{grid-template-columns:repeat(2,1fr)}.links{display:none}.split{grid-template-columns:1fr}}
-@media(max-width:560px){section{padding:52px 0}.hero{min-height:510px}.hero h1{font-size:45px}.cards{grid-template-columns:1fr}.photo{height:235px}.values,.steps,.footgrid{grid-template-columns:1fr}.gallery img{height:220px}.gallery img:last-child{height:170px}.band{display:block}.band .btn{margin-top:16px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#073b4c">
+  <meta name="description" content="Descubre El Cuyo, Yucatán. Tours en lancha, pesca, Las Coloradas, bioluminiscencia, kitesurf, cuatrimotos, hospedaje y experiencias.">
+  <title>Explora El Cuyo Tours | Experiencias en El Cuyo, Yucatán</title>
+
+  <style>
+    :root {
+      --navy: #073b4c;
+      --blue: #087e8b;
+      --turquoise: #20b8b0;
+      --sand: #f4ead8;
+      --cream: #fffaf1;
+      --ink: #18343b;
+      --muted: #63777b;
+      --white: #fff;
+      --shadow: 0 12px 35px rgba(7,59,76,.12);
+      --radius: 20px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+    img, video { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+
+    .topbar {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+      padding: 8px 14px;
+      font-size: .88rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,250,241,.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(7,59,76,.08);
+    }
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 850;
+      color: var(--navy);
+      letter-spacing: -.5px;
+    }
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+    .brand span { font-size: 1.05rem; }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      font-size: .92rem;
+      font-weight: 650;
+    }
+    .nav-links a:hover { color: var(--blue); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--turquoise);
+      color: #063b43;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform .2s, filter .2s;
+    }
+    .btn:hover { transform: translateY(-2px); filter: brightness(.96); }
+    .btn-dark { background: var(--navy); color: white; }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.75);
+      color: white;
+    }
+
+    .hero {
+      min-height: 590px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(3,34,45,.78), rgba(3,34,45,.18)),
+        url("hero-coloradas.jpg") center/cover no-repeat;
+    }
+    .hero-content {
+      width: min(1120px, 100%);
+      margin: auto;
+      padding: 90px 24px;
+    }
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 13px;
+      background: rgba(255,255,255,.16);
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 30px;
+      font-size: .85rem;
+      letter-spacing: .5px;
+    }
+    .hero h1 {
+      max-width: 720px;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1.04;
+      margin: 20px 0;
+      letter-spacing: -2px;
+    }
+    .hero p {
+      max-width: 590px;
+      font-size: 1.12rem;
+      color: rgba(255,255,255,.92);
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
+
+    section { padding: 75px 20px; }
+    .container { max-width: 1200px; margin: auto; }
+    .section-heading { text-align: center; margin-bottom: 32px; }
+    .section-heading .eyebrow {
+      color: var(--blue);
+      background: #e4f5f1;
+      border: 0;
+    }
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      color: var(--navy);
+      margin: 14px 0 10px;
+      letter-spacing: -1px;
+    }
+    .section-heading p { max-width: 700px; margin: auto; color: var(--muted); }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: center;
+    }
+    .intro-grid img {
+      width: 100%;
+      height: 390px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .intro-copy h2 { font-size: 2.2rem; line-height: 1.15; color: var(--navy); }
+    .intro-copy p { color: var(--muted); }
+
+    .filters {
+      display: flex;
+      gap: 9px;
+      overflow-x: auto;
+      padding: 5px 2px 15px;
+      scrollbar-width: thin;
+      margin-bottom: 16px;
+    }
+    .filter {
+      white-space: nowrap;
+      padding: 10px 17px;
+      border: 1px solid #d7e4e0;
+      background: white;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .filter.active, .filter:hover {
+      background: var(--navy);
+      color: white;
+      border-color: var(--navy);
+    }
+
+    .search-wrap { max-width: 520px; margin: 0 auto 25px; }
+    .search-wrap input {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 30px;
+      border: 1px solid #d7e4e0;
+      background: white;
+      outline-color: var(--turquoise);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 22px;
+    }
+    .card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      transition: transform .2s;
+    }
+    .card:hover { transform: translateY(-5px); }
+    .card-image {
+      height: 230px;
+      position: relative;
+      background: #e5eeeb;
+      overflow: hidden;
+    }
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s;
+    }
+    .card:hover .card-image img { transform: scale(1.04); }
+    .tag {
+      position: absolute;
+      top: 13px;
+      left: 13px;
+      background: rgba(255,255,255,.94);
+      color: var(--navy);
+      padding: 6px 11px;
+      border-radius: 20px;
+      font-size: .76rem;
+      font-weight: 800;
+    }
+    .card-body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
+    .card h3 { margin: 0 0 8px; color: var(--navy); font-size: 1.2rem; }
+    .card p { color: var(--muted); font-size: .93rem; margin: 0 0 15px; }
+    .price { color: var(--blue); font-weight: 850; margin-top: auto; padding-bottom: 14px; }
+    .card-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .card-actions .btn { flex: 1; font-size: .85rem; padding: 10px 12px; }
+
+    .empty {
+      text-align: center;
+      color: var(--muted);
+      padding: 35px;
+      display: none;
+    }
+
+    .feature-band {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+    }
+    .feature-band h2 { font-size: clamp(2rem,4vw,3rem); margin: 0 0 12px; }
+    .feature-band p { max-width: 720px; margin: auto; color: #d5e8e7; }
+    .feature-band .btn { margin-top: 22px; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      grid-auto-rows: 190px;
+      gap: 12px;
+    }
+    .gallery-item {
+      border: 0;
+      padding: 0;
+      background: #e5eeeb;
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .gallery-item:first-child { grid-column: span 2; grid-row: span 2; }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .3s;
+    }
+    .gallery-item:hover img { transform: scale(1.05); }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+    }
+    .video-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .video-card video { width: 100%; aspect-ratio: 16/10; object-fit: cover; background: #102f38; }
+    .video-card p { padding: 0 15px 12px; font-weight: 700; color: var(--navy); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+    .contact-panel {
+      background: white;
+      padding: 30px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .contact-panel h2 { color: var(--navy); font-size: 2rem; }
+    .contact-panel p { color: var(--muted); }
+    .contact-photo {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: var(--radius);
+    }
+
+    footer {
+      background: #052d3a;
+      color: white;
+      padding: 35px 20px;
+      text-align: center;
+    }
+    footer p { color: #c6d9d9; font-size: .9rem; }
+    .footer-links { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; }
+
+    .whatsapp-float {
+      position: fixed;
+      z-index: 30;
+      bottom: 20px;
+      right: 18px;
+      background: #20c66a;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 1.7rem;
+      box-shadow: 0 8px 25px rgba(0,0,0,.25);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background: rgba(0,0,0,.72);
+      padding: 18px;
+      overflow-y: auto;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal.open { display: flex; }
+    .modal-box {
+      width: min(680px,100%);
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      max-height: 92vh;
+      overflow-y: auto;
+    }
+    .modal-box img { width: 100%; height: 280px; object-fit: cover; }
+    .modal-content { padding: 25px; }
+    .modal-content h2 { color: var(--navy); margin-top: 0; }
+    .modal-close {
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      border: 0;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      background: white;
+      cursor: pointer;
+      font-size: 1.3rem;
+    }
+    .lightbox img { max-height: 85vh; width: auto; max-width: 100%; object-fit: contain; }
+    .lightbox .modal-box { background: transparent; box-shadow: none; overflow: visible; }
+
+    .note { font-size: .83rem; color: var(--muted); }
+    .broken-image { display: none !important; }
+
+    @media(max-width:900px) {
+      .cards { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .video-grid { grid-template-columns: repeat(2,1fr); }
+      .gallery-grid { grid-template-columns: repeat(3,1fr); }
+    }
+    @media(max-width:650px) {
+      .nav { padding: 8px 14px; }
+      .nav-links { display: none; }
+      .brand img { width: 42px; height: 42px; }
+      .hero { min-height: 540px; }
+      .hero-content { padding: 75px 20px; }
+      .hero h1 { letter-spacing: -1px; }
+      section { padding: 55px 16px; }
+      .intro-grid, .contact-grid { grid-template-columns: 1fr; }
+      .intro-grid img { height: 270px; }
+      .cards { grid-template-columns: 1fr; }
+      .card-image { height: 240px; }
+      .video-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: repeat(2,1fr); grid-auto-rows: 145px; }
+      .gallery-item:first-child { grid-column: span 2; grid-row: span 2; }
+      .contact-photo { height: 260px; }
+    }
+  </style>
 </head>
+
 <body>
+  <div class="topbar">Experiencias locales · El Cuyo, Yucatán · Golfo de México</div>
 
-<div class="top">El Cuyo, Yucatán · Golfo de México · Tours y experiencias locales</div>
+  <header>
+    <nav class="nav">
+      <a class="brand" href="#inicio" aria-label="Explora El Cuyo Tours">
+        <img src="logo.png" alt="Logo Explora El Cuyo Tours">
+        <span>Explora El Cuyo Tours</span>
+      </a>
+      <div class="nav-links">
+        <a href="#experiencias">Experiencias</a>
+        <a href="#galeria">Galería</a>
+        <a href="#videos">Videos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <a class="btn btn-dark" href="https://wa.me/5219841858200" target="_blank" rel="noopener">Reservar</a>
+    </nav>
+  </header>
 
-<header>
-<div class="wrap nav">
-<a class="brand" href="#inicio">
-<img src="logo.png" alt="Logo" onerror="this.style.display='none'">
-<span>exploraelcuyotours</span>
-</a>
-<nav class="links">
-<a href="#experiencias">Experiencias</a>
-<a href="#nosotros">Nosotros</a>
-<a href="#reservar">Reservar</a>
-</nav>
-<a class="btn" href="https://wa.me/5219841858200" target="_blank">WhatsApp</a>
-</div>
-</header>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <span class="eyebrow">DESCUBRE EL CUYO · YUCATÁN</span>
+        <h1>Tu próxima aventura comienza aquí.</h1>
+        <p>Explora playas, naturaleza, lagunas y experiencias inolvidables. Conoce El Cuyo de la mano de gente local.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#experiencias">Descubrir experiencias</a>
+          <a class="btn btn-outline" href="https://wa.me/5219841858200" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+        </div>
+      </div>
+    </section>
 
-<main>
-<section class="hero" id="inicio">
-<div class="wrap">
-<div class="hero-content">
-<div class="eyebrow">Tu próxima aventura comienza aquí</div>
-<h1>Descubre El Cuyo a tu manera.</h1>
-<p>Mar, naturaleza y experiencias auténticas en un rincón especial de Yucatán. Encuentra actividades y servicios locales con atención cercana.</p>
-<div class="actions">
-<a class="btn" href="#experiencias">Explorar experiencias →</a>
-<a class="btn light" href="https://wa.me/5219841858200" target="_blank">Contáctanos</a>
-</div>
-</div>
-</div>
-</section>
+    <section>
+      <div class="container intro-grid">
+        <img src="sinclasificar_muelle_playa_aerea.webp" alt="Vista de la costa de El Cuyo" loading="lazy">
+        <div class="intro-copy">
+          <span class="eyebrow">VIVE EL DESTINO</span>
+          <h2>El Cuyo: naturaleza, tranquilidad y aventura.</h2>
+          <p>Un rincón especial de la costa de Yucatán, junto al Golfo de México. Aquí puedes disfrutar del mar, descubrir paisajes naturales y conocer experiencias organizadas por proveedores locales.</p>
+          <p>Te ayudamos a encontrar actividades, transporte y opciones de hospedaje para que aproveches tu visita.</p>
+          <a class="btn btn-dark" href="#experiencias">Ver experiencias</a>
+        </div>
+      </div>
+    </section>
 
-<section id="experiencias">
-<div class="wrap">
-<span class="kicker">Encuentra tu plan</span>
-<h2>Experiencias y servicios</h2>
-<p class="intro">Explora nuestras actividades. Consulta los detalles y escríbenos para confirmar disponibilidad, precio final e inclusiones.</p>
+    <section id="experiencias">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">PLANEA TU VISITA</span>
+          <h2>Experiencias y servicios</h2>
+          <p>Encuentra tu próxima aventura. Consulta disponibilidad, horarios y detalles directamente con nosotros.</p>
+        </div>
 
-<div class="filters" id="filters">
-<button class="filter active" data-filter="todos">Todo</button>
-<button class="filter" data-filter="lancha">Lancha</button>
-<button class="filter" data-filter="pesca">Pesca</button>
-<button class="filter" data-filter="coloradas">Las Coloradas</button>
-<button class="filter" data-filter="bio">Bioluminiscencia</button>
-<button class="filter" data-filter="utv">Cuatrimotos</button>
-<button class="filter" data-filter="kayak">Kayak</button>
-<button class="filter" data-filter="paddle">Paddleboard</button>
-<button class="filter" data-filter="kite">Kitesurf</button>
-<button class="filter" data-filter="transporte">Transporte</button>
-<button class="filter" data-filter="hospedaje">Hospedaje</button>
-<button class="filter" data-filter="masajes">Masajes</button>
-<button class="filter" data-filter="extras">Otros</button>
-</div>
+        <div class="search-wrap">
+          <input id="search" type="search" placeholder="¿Qué te gustaría hacer?" aria-label="Buscar experiencias">
+        </div>
 
-<div class="cards" id="cards"></div>
-</div>
-</section>
+        <div class="filters" id="filters" aria-label="Filtrar experiencias">
+          <button class="filter active" data-filter="todos">Todo</button>
+          <button class="filter" data-filter="lancha">Lancha y pesca</button>
+          <button class="filter" data-filter="naturaleza">Naturaleza</button>
+          <button class="filter" data-filter="aventura">Aventura</button>
+          <button class="filter" data-filter="agua">Agua y playa</button>
+          <button class="filter" data-filter="servicios">Servicios</button>
+        </div>
 
-<section class="soft" id="nosotros">
-<div class="wrap split">
-<div class="gallery">
-<img src="lancha_mayrani_paseo_familia.webp" alt="Paseo en lancha" loading="lazy" onerror="this.src='tour-bote-grupo.jpg'">
-<img src="coloradas_flamenco_rosa.webp" alt="Flamencos en Las Coloradas" loading="lazy" onerror="this.src='hero-coloradas.jpg'">
-</div>
-<div>
-<span class="kicker">Conoce nuestra esencia</span>
-<h2>Experiencias locales, recuerdos que se quedan.</h2>
-<p class="intro">En Explora El Cuyo Tours te ayudamos a descubrir nuestro rincón de Yucatán. Conectamos a visitantes con actividades, aventuras y servicios locales para disfrutar el mar, la naturaleza y la tranquilidad del pueblo.</p>
-<div class="values">
-<div class="value"><h3>Misión</h3><p>Facilitar experiencias y servicios locales con información clara y atención amable.</p></div>
-<div class="value"><h3>Visión</h3><p>Ser un punto de referencia para descubrir El Cuyo y conectar visitantes con proveedores locales.</p></div>
-</div>
-</div>
-</div>
-</section>
+        <div class="cards" id="cards"></div>
+        <div class="empty" id="empty">No encontramos experiencias con esa búsqueda. Prueba con otra palabra.</div>
+      </div>
+    </section>
 
-<section class="dark" id="reservar">
-<div class="wrap">
-<span class="eyebrow">Fácil y directo</span>
-<h2>¿Cómo reservar?</h2>
-<p>Confirma por escrito los detalles de tu actividad antes de realizar cualquier pago.</p>
-<div class="steps">
-<div class="step"><b>01 · Elige tu experiencia</b><p>Revisa la descripción, precio de referencia y condiciones.</p></div>
-<div class="step"><b>02 · Escríbenos</b><p>Indica fecha, número de personas y actividad que te interesa.</p></div>
-<div class="step"><b>03 · Confirma los detalles</b><p>Consulta disponibilidad, proveedor, inclusiones y precio final.</p></div>
-</div>
-<div class="notice">Los precios son referencias y deben confirmarse. La disponibilidad, tarifa final, ruta e inclusiones dependen de cada proveedor. El regreso de transportación puede cotizarse por separado.</div>
-</div>
-</section>
+    <section class="feature-band">
+      <div class="container">
+        <h2>¿Tienes una idea especial?</h2>
+        <p>Podemos ayudarte a consultar opciones para celebraciones, propuestas románticas, sesiones fotográficas, eventos y experiencias privadas.</p>
+        <a class="btn" href="https://wa.me/5219841858200?text=Hola%2C%20quiero%20consultar%20una%20experiencia%20especial." target="_blank" rel="noopener">Cuéntanos tu idea</a>
+      </div>
+    </section>
 
-<section>
-<div class="wrap">
-<div class="band">
-<div><h2>¿No sabes qué experiencia elegir?</h2><p>Cuéntanos tus fechas y qué te gustaría hacer en El Cuyo.</p></div>
-<a class="btn light" href="https://wa.me/5219841858200" target="_blank">Pedir recomendaciones</a>
-</div>
-</div>
-</section>
-</main>
+    <section id="galeria">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">MOMENTOS DE EL CUYO</span>
+          <h2>Galería de fotografías</h2>
+          <p>Un vistazo a los paisajes y experiencias que puedes descubrir.</p>
+        </div>
+        <div class="gallery-grid" id="gallery"></div>
+      </div>
+    </section>
 
-<footer>
-<div class="wrap">
-<div class="footgrid">
-<div><h3>exploraelcuyotours</h3><p>Experiencias y servicios locales en El Cuyo, Yucatán, Golfo de México.</p><a href="https://wa.me/5219841858200">WhatsApp: +52 1 984 185 8200</a></div>
-<div><h4>Explora</h4><a href="#experiencias">Actividades y servicios</a><a href="#nosotros">Nosotros</a><a href="#reservar">Cómo reservar</a></div>
-<div><h4>Información</h4><p>Confirma todos los detalles de cada servicio antes de reservar.</p></div>
-</div>
-<div class="copy">© <span id="year"></span> Explora El Cuyo Tours. Todos los derechos reservados.</div>
-</div>
-</footer>
+    <section id="videos">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">MIRA EL DESTINO</span>
+          <h2>Videos de nuestras experiencias</h2>
+          <p>Reproduce los videos y conoce un poco más de El Cuyo.</p>
+        </div>
+        <div class="video-grid" id="videoGrid"></div>
+      </div>
+    </section>
 
-<a class="btn wa" href="https://wa.me/5219841858200" target="_blank">WhatsApp</a>
+    <section id="contacto">
+      <div class="container contact-grid">
+        <div class="contact-panel">
+          <span class="eyebrow">ESTAMOS PARA AYUDARTE</span>
+          <h2>Planea tu experiencia en El Cuyo.</h2>
+          <p>Escríbenos para consultar precios actualizados, disponibilidad, horarios, puntos de encuentro y detalles de cada actividad.</p>
+          <p><strong>Explora El Cuyo Tours</strong></p>
+          <a class="btn" href="https://wa.me/5219841858200?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20las%20experiencias%20en%20El%20Cuyo." target="_blank" rel="noopener">Enviar mensaje por WhatsApp</a>
+          <p class="note">Los precios y la disponibilidad pueden cambiar. Confirma los detalles antes de realizar cualquier pago.</p>
+        </div>
+        <img class="contact-photo" src="sinclasificar_atardecer_faro_muelle.webp" alt="Atardecer en El Cuyo" loading="lazy">
+      </div>
+    </section>
+  </main>
 
-<div class="modal" id="modal">
-<div class="panel">
-<div class="panelhead"><h2 id="modal-title">Detalles</h2><button class="close" id="close">×</button></div>
-<div class="panelcontent" id="modal-content"></div>
-</div>
-</div>
+  <footer>
+    <div class="brand" style="justify-content:center;color:white">
+      <img src="logo.png" alt="" loading="lazy">
+      <span>Explora El Cuyo Tours</span>
+    </div>
+    <p>Descubre El Cuyo, Yucatán · Golfo de México</p>
+    <div class="footer-links">
+      <a href="#experiencias">Experiencias</a>
+      <a href="#galeria">Galería</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <p>© <span id="year"></span> Explora El Cuyo Tours. Todos los derechos reservados.</p>
+  </footer>
 
-<script>
-const WHATSAPP='https://wa.me/5219841858200?text=';
+  <a class="whatsapp-float" href="https://wa.me/5219841858200" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">☏</a>
 
-const activities=[
-{id:'ria',cat:'lancha',title:'Paseo en lancha por Ría Lagartos',tag:'Naturaleza',price:'$3,500 MXN',unit:'Grupo de 1 a 6 personas',image:'lancha_mayrani_paseo_familia.webp',desc:'Disfruta un paseo en lancha para conocer los paisajes y la naturaleza de la región.',duration:'Consultar duración y horario',includes:['Paseo en lancha para el grupo confirmado'],excludes:['Alimentos, bebidas, entradas u otros servicios no confirmados'],conditions:'Confirma ruta, duración, punto de salida, horario y posibles entradas antes de pagar.'},
+  <div class="modal" id="detailsModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <button class="modal-close" data-close="detailsModal" aria-label="Cerrar">×</button>
+      <img id="modalImage" src="" alt="">
+      <div class="modal-content">
+        <h2 id="modalTitle"></h2>
+        <p id="modalDescription"></p>
+        <p class="price" id="modalPrice"></p>
+        <p class="note" id="modalNote"></p>
+        <a class="btn" id="modalWhatsapp" href="#" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+      </div>
+    </div>
+  </div>
 
-{id:'pesca',cat:'pesca',title:'Pesca deportiva',tag:'Mar y aventura',price:'$6,000 MXN',unit:'Grupo de hasta 6 personas',image:'tour-pesca-clientes.jpg',desc:'Disfruta una jornada de pesca en el mar coordinada con proveedor local.',duration:'Horario y duración por confirmar',includes:['Salida de pesca según el plan confirmado'],excludes:['Alimentos, bebidas y servicios no confirmados'],conditions:'Pregunta qué equipo se incluye, duración, condiciones del mar y reglas de captura.'},
+  <div class="modal lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Fotografía ampliada">
+    <div class="modal-box">
+      <button class="modal-close" data-close="lightbox" aria-label="Cerrar">×</button>
+      <img id="lightboxImage" src="" alt="Fotografía ampliada">
+    </div>
+  </div>
 
-{id:'coloradas',cat:'coloradas',title:'Las Coloradas en lancha',tag:'Paisajes únicos',price:'$5,500–$6,500 MXN',unit:'Grupo de 1 a 6 personas',image:'coloradas_personas_laguna_rosa.webp',desc:'Conoce los paisajes de Las Coloradas mediante una experiencia organizada con proveedor local.',duration:'Consultar duración y ruta',includes:['Paseo en lancha según ruta confirmada'],excludes:['Entrada al parque, alimentos y servicios no indicados'],conditions:'La entrada al parque no está incluida cuando corresponda. Confirma acceso, ruta y horario.'},
+  <script>
+    "use strict";
 
-{id:'bio',cat:'bio',title:'Tour de bioluminiscencia',tag:'Experiencia nocturna',price:'$850 MXN',unit:'Por persona',image:'sinclasificar_bioluminiscencia_olas.webp',desc:'Visita una playa apartada por la noche para intentar observar la bioluminiscencia, un fenómeno natural que depende de las condiciones ambientales.',duration:'Aproximadamente 2 horas',includes:['Traslado local en cuatrimoto desde el hospedaje, según coordinación','Acompañamiento de guía durante la experiencia','Regreso al alojamiento según servicio confirmado'],excludes:['No se puede garantizar la intensidad ni la observación del fenómeno'],conditions:'Salidas habituales: 8:30 p. m. o 9:30 p. m., sujetas a confirmación. El clima y las condiciones naturales pueden modificar la experiencia.'},
+    const WHATSAPP = "5219841858200";
 
-{id:'uma',cat:'utv',title:'Ruta en cuatrimoto por la UMA',tag:'Aventura terrestre',price:'$1,800 MXN',unit:'Por recorrido; 1 moto para 2 personas',image:'cuatrimotos_buggy_verde_laguna.webp',desc:'Recorrido por un rancho de aproximadamente 30 hectáreas, ubicado a unos 15 minutos de El Cuyo.',duration:'Aproximadamente 2.5 horas',includes:['Una cuatrimoto para dos personas según la reserva'],excludes:['Servicios adicionales no descritos en la confirmación'],conditions:'Confirma requisitos del conductor, equipo de seguridad, ruta y reglas del rancho.'},
+    const activities = [
+      {
+        title: "Paseo en lancha por Ría Lagartos",
+        category: "lancha",
+        image: "lancha_banco_arena_grupo_agua.webp",
+        price: "$3,500 MXN",
+        description: "Recorre los paisajes naturales de la zona en una experiencia en lancha.",
+        note: "Precio indicado para 1 a 6 personas. Confirma recorrido, horario y disponibilidad."
+      },
+      {
+        title: "Pesca deportiva",
+        category: "lancha",
+        image: "lancha_pesca_nino_pescado_chalecos.webp",
+        price: "$6,000 MXN",
+        description: "Disfruta una jornada de pesca en compañía de un proveedor local.",
+        note: "Precio indicado para grupos de hasta 6 personas. Consulta detalles e inclusiones."
+      },
+      {
+        title: "Las Coloradas en lancha",
+        category: "naturaleza",
+        image: "coloradas_personas_laguna_rosa.webp",
+        price: "$5,500–$6,500 MXN",
+        description: "Conoce los paisajes de las salinas y sus canales en un recorrido en lancha.",
+        note: "Precio indicado para 1 a 6 personas. Consulta disponibilidad y condiciones del recorrido."
+      },
+      {
+        title: "Bioluminiscencia",
+        category: "naturaleza",
+        image: "sinclasificar_bioluminiscencia_olas.webp",
+        price: "$850 MXN por persona",
+        description: "Una experiencia nocturna para observar el fenómeno natural de la bioluminiscencia.",
+        note: "Duración aproximada: 2 horas. Salidas habituales: 8:30 p.m. o 9:30 p.m. Incluye traslado desde tu alojamiento en cuatrimoto, guía y regreso. La intensidad del fenómeno depende de las condiciones naturales y no se puede garantizar."
+      },
+      {
+        title: "Tour en cuatrimoto por La UMA",
+        category: "aventura",
+        image: "cuatrimotos_tour_utv_grupo.webp",
+        price: "$1,800 MXN por tour",
+        description: "Recorre un espacio natural de aproximadamente 30 hectáreas en una experiencia de aventura.",
+        note: "Referencia: una moto para dos personas, recorrido aproximado de 2.5 horas y ubicación a unos 15 minutos de El Cuyo. Confirma disponibilidad."
+      },
+      {
+        title: "Tubular y buggy",
+        category: "aventura",
+        image: "cuatrimotos_buggy_verde_laguna.webp",
+        price: "$1,500 por persona · $1,350 en grupos de 3 o más",
+        description: "Explora caminos y paisajes en vehículos tipo tubular o buggy.",
+        note: "La entrada al parque no está incluida. Confirma modelo, recorrido y disponibilidad."
+      },
+      {
+        title: "Renta de kayak",
+        category: "agua",
+        image: "h03-kayak-1.jpg",
+        price: "$600 MXN / 2 horas",
+        description: "Disfruta el agua a tu propio ritmo con una renta de kayak.",
+        note: "Renta libre. Consulta disponibilidad, punto de entrega y condiciones."
+      },
+      {
+        title: "Renta de paddle board",
+        category: "agua",
+        image: "h02-sup.jpg",
+        price: "$500 MXN / 2 horas",
+        description: "Disfruta del mar sobre una tabla de paddle board.",
+        note: "Renta libre. Consulta disponibilidad y condiciones del servicio."
+      },
+      {
+        title: "Kitesurf",
+        category: "agua",
+        image: "kitesurf_cometas_en_playa.webp",
+        price: "Consultar",
+        description: "El Cuyo es un destino conocido por sus condiciones para practicar kitesurf.",
+        note: "Consulta clases, renta de equipo y disponibilidad."
+      },
+      {
+        title: "Transporte privado",
+        category: "servicios",
+        image: "transporte_chofer_abre_puerta_auto.webp",
+        price: "$3,600 MXN",
+        description: "Consulta opciones de transporte privado para organizar tus traslados.",
+        note: "Tarifa de referencia para hasta 7 pasajeros, por un trayecto. El regreso se cotiza por separado."
+      },
+      {
+        title: "Hospedaje",
+        category: "servicios",
+        image: "hospedaje_recamara_vista_al_mar.webp",
+        price: "Consultar",
+        description: "Te ayudamos a consultar opciones de alojamiento en El Cuyo.",
+        note: "La disponibilidad y las tarifas dependen de cada propiedad y fecha."
+      },
+      {
+        title: "Masajes en la playa",
+        category: "servicios",
+        image: "masajes_playa_el_cuyo.webp",
+        price: "Consultar",
+        description: "Consulta opciones para disfrutar de un momento de relajación junto al mar.",
+        note: "Fotografía ilustrativa. Servicio sujeto a disponibilidad."
+      },
+      {
+        title: "Sesiones fotográficas",
+        category: "servicios",
+        image: "sesiones_pareja_perro_playa_camisetas.webp",
+        price: "Consultar",
+        description: "Conserva tus recuerdos de El Cuyo con una sesión fotográfica en la playa.",
+        note: "Consulta paquetes, horarios y disponibilidad."
+      },
+      {
+        title: "Observación de aves",
+        category: "naturaleza",
+        image: "tour-aves.jpg",
+        price: "Consultar",
+        description: "Descubre la riqueza natural y las aves de la región.",
+        note: "Consulta recorridos, horarios y disponibilidad."
+      }
+    ];
 
-{id:'buggy',cat:'utv',title:'Paseo en tubular o buggy',tag:'Adrenalina',price:'$1,500 por persona (1–3); $1,350 (3+)',unit:'Precio de referencia',image:'cuatrimotos_tour_utv_grupo.webp',desc:'Consulta opciones de recorrido en tubular o buggy por la zona.',duration:'Consultar duración',includes:['Recorrido según confirmación del proveedor'],excludes:['Entrada al parque y otros cargos no especificados'],conditions:'Confirma duración, pasajeros, equipo de seguridad y punto de salida. La entrada al parque no está incluida.'},
+    const galleryImages = [
+      "coloradas_flamenco_en_agua.webp",
+      "coloradas_holbox_letras_playa_bicicleta.webp",
+      "coloradas_letras_coloridas_letrero.webp",
+      "lancha_atardecer_chalecos_personas.webp",
+      "lancha_azul_blanca_chalecos_ninos.webp",
+      "lancha_mayrani_paseo_familia.webp",
+      "sinclasificar_hamacas_en_el_mar.webp",
+      "sinclasificar_atardecer_dunas_personas.webp",
+      "sinclasificar_faro_el_cuyo_noche.webp",
+      "sinclasificar_sombrillas_sillas_playa.webp",
+      "kitesurf_cometa_en_el_aire_personas.webp",
+      "cuatrimotos_utv_azul_logo_camino.webp",
+      "hospedaje_edificio_dos_mares.webp",
+      "sinclasificar_tortuga_bebe_en_mano.webp"
+    ];
 
-{id:'kayak-renta',cat:'kayak',title:'Renta de kayak',tag:'A tu ritmo',price:'$600 MXN',unit:'Por 2 horas',image:'h03-kayak-1.jpg',desc:'Renta un kayak para explorar la zona permitida a tu propio ritmo.',duration:'2 horas de renta',includes:['Kayak durante el periodo acordado'],excludes:['Guía, traslado o equipo adicional salvo confirmación'],conditions:'Confirma capacidad, chalecos, horario y condiciones del agua.'},
+    const videos = [
+      { file: "kitesurf_cometa_en_el_aire_personas.mp4", title: "Kitesurf en El Cuyo" },
+      { file: "kitesurf_cometas_en_playa.mp4", title: "Cometas en la playa" },
+      { file: "transporte_carrito_golf_rojo.mp4", title: "Transporte en El Cuyo" },
+      { file: "sinclasificar_mar_atardecer.mp4", title: "Atardecer frente al mar" },
+      { file: "sinclasificar_persona_en_el_mar.mp4", title: "Disfruta el mar" },
+      { file: "sinclasificar_flor_azul_playa.mp4", title: "Detalles de la playa" },
+      { file: "sinclasificar_auto_espejo_carretera.mp4", title: "Recorridos por la región" },
+      { file: "sinclasificar_auto_exterior.mp4", title: "Explora los alrededores" },
+      { file: "sinclasificar_mural_flamencos_faro.mp4", title: "Paisajes de El Cuyo" }
+    ];
 
-{id:'kayak-guiado',cat:'kayak',title:'Experiencia guiada en kayak',tag:'Acompañamiento local',price:'Consultar',unit:'Según recorrido y duración',image:'h04-kayak-2.jpg',desc:'Pregunta por recorridos acompañados en kayak para conocer el entorno con orientación local.',duration:'Confirmar al reservar',includes:['Acompañamiento y ruta según confirmación'],excludes:['Renta, traslado o equipo extra si no se especifican'],conditions:'Consulta ruta, duración, nivel requerido, equipo de seguridad y precio. Es distinta de la renta libre.'},
+    const cardsContainer = document.getElementById("cards");
+    const emptyMessage = document.getElementById("empty");
+    const searchInput = document.getElementById("search");
+    let activeFilter = "todos";
 
-{id:'sup-renta',cat:'paddle',title:'Renta de paddleboard',tag:'A tu ritmo',price:'$500 MXN',unit:'Por 2 horas',image:'h02-sup.jpg',desc:'Renta una tabla de paddleboard para disfrutar el agua a tu propio ritmo.',duration:'2 horas de renta',includes:['Tabla durante el periodo confirmado'],excludes:['Guía, clase, traslado o equipo adicional salvo confirmación'],conditions:'Pregunta por chaleco salvavidas, condiciones del agua y área permitida.'},
+    function safeImageError(image) {
+      image.classList.add("broken-image");
+      const card = image.closest(".card-image, .gallery-item");
+      if (card) card.style.background = "#dcebe7";
+    }
 
-{id:'sup-guiado',cat:'paddle',title:'Paddleboard guiado',tag:'Explora acompañado',price:'Consultar',unit:'Según recorrido y duración',image:'sinclasificar_persona_en_el_mar.webp',desc:'Consulta experiencias guiadas en paddleboard con acompañamiento y recorrido por confirmar.',duration:'Confirmar al reservar',includes:['Guía y recorrido únicamente según confirmación'],excludes:['Renta, traslado o equipo extra si no se especifican'],conditions:'Confirma precio, duración, nivel requerido, equipo de seguridad y condiciones del agua. Es distinto de la renta de tabla.'},
+    function renderCards() {
+      const term = searchInput.value.trim().toLocaleLowerCase("es");
+      const filtered = activities.filter(item => {
+        const matchesFilter = activeFilter === "todos" || item.category === activeFilter;
+        const matchesText = (item.title + " " + item.description).toLocaleLowerCase("es").includes(term);
+        return matchesFilter && matchesText;
+      });
 
-{id:'kite',cat:'kite',title:'Kitesurf: clases o equipo',tag:'Viento y mar',price:'Consultar',unit:'Según clase o renta',image:'kitesurf_cometa_en_el_aire_personas.webp',desc:'Consulta opciones de clases o renta de equipo según disponibilidad y condiciones del viento.',duration:'Según modalidad',includes:['Solo lo que se especifique para la modalidad elegida'],excludes:['Instructor, equipo o traslados no confirmados'],conditions:'Indica si buscas clase, sesión guiada o renta. La actividad depende del viento y de la evaluación de seguridad.'},
+      cardsContainer.innerHTML = "";
+      emptyMessage.style.display = filtered.length ? "none" : "block";
 
-{id:'transporte',cat:'transporte',title:'Transportación privada',tag:'Viaja cómodo',price:'$3,600 MXN',unit:'Hasta 7 pasajeros; trayecto por confirmar',image:'transporte_chofer_abre_puerta_auto.webp',desc:'Consulta opciones de transporte privado para llegadas, salidas y trayectos entre destinos.',duration:'Depende del trayecto',includes:['Vehículo y pasajeros según confirmación'],excludes:['Regreso, espera, peajes o paradas extra si no se cotizan'],conditions:'La tarifa de referencia es para un solo trayecto. El regreso se cotiza por separado y el precio depende de la ruta.'},
+      filtered.forEach(item => {
+        const card = document.createElement("article");
+        card.className = "card";
 
-{id:'hospedaje',cat:'hospedaje',title:'Hospedaje en El Cuyo',tag:'Quédate más tiempo',price:'Consultar',unit:'Según alojamiento y fechas',image:'hospedaje_edificio_dos_mares.webp',desc:'Te ayudamos a consultar alojamientos disponibles para encontrar una opción para tu viaje.',duration:'Por noche o estancia acordada',includes:['Amenidades y servicios confirmados por cada alojamiento'],excludes:['Depósitos, limpieza, mascotas u otros cargos no confirmados'],conditions:'Solicita precio total, capacidad, reglas, depósito y política de cancelación.'},
+        const imageWrap = document.createElement("div");
+        imageWrap.className = "card-image";
 
-{id:'masajes',cat:'masajes',title:'Masajes y bienestar',tag:'Momento de calma',price:'Consultar',unit:'Según tipo y duración',image:'masajes_playa_el_cuyo.webp',desc:'Regálate un momento de descanso y bienestar durante tu estancia en El Cuyo. Consulta las opciones de masaje disponibles.',duration:'Confirmar al reservar',includes:['Tipo de masaje, duración y lugar sujetos a confirmación'],excludes:['Servicios adicionales no incluidos en la cotización'],conditions:'Pregunta por duración, precio, ubicación y disponibilidad. La fotografía es ilustrativa.'},
+        const image = document.createElement("img");
+        image.src = item.image;
+        image.alt = item.title;
+        image.loading = "lazy";
+        image.onerror = () => safeImageError(image);
 
-{id:'sesiones',cat:'extras',title:'Sesiones fotográficas',tag:'Recuerdos especiales',price:'Consultar',unit:'Según sesión y duración',image:'sesiones_pareja_perro_playa_camisetas.webp',desc:'Consulta sesiones fotográficas en la playa para parejas, familias o momentos especiales.',duration:'Confirmar al reservar',includes:['Entrega y duración según cotización'],excludes:['Impresiones, traslados o extras no especificados'],conditions:'Confirma fecha, duración, número de personas, cantidad de fotografías y forma de entrega.'},
+        const tag = document.createElement("span");
+        tag.className = "tag";
+        tag.textContent = item.category.charAt(0).toUpperCase() + item.category.slice(1);
 
-{id:'aves',cat:'extras',title:'Observación de aves y naturaleza',tag:'Vida silvestre',price:'Consultar',unit:'Según recorrido',image:'tour-aves.jpg',desc:'Pregunta por opciones para conocer la riqueza natural y las aves de la región.',duration:'Confirmar al reservar',includes:['Guía, ruta y equipo solo según confirmación'],excludes:['Traslados o entradas no especificados'],conditions:'Consulta temporada, horario, duración y condiciones del recorrido.'}
-];
+        imageWrap.append(image, tag);
 
-const cards=document.getElementById('cards');
+        const body = document.createElement("div");
+        body.className = "card-body";
 
-function render(filter='todos'){
- cards.innerHTML='';
- activities.filter(a=>filter==='todos'||a.cat===filter).forEach(a=>{
-  const card=document.createElement('article');
-  card.className='card';
-  const photo=document.createElement('div');
-  photo.className='photo';
-  const img=document.createElement('img');
-  img.src=a.image;
-  img.alt=a.title;
-  img.loading='lazy';
-  img.onerror=()=>{img.onerror=null;img.src='hero-coloradas.jpg'};
-  const tag=document.createElement('span');
-  tag.className='tag';
-  tag.textContent=a.tag;
-  photo.append(img,tag);
+        const title = document.createElement("h3");
+        title.textContent = item.title;
 
-  const body=document.createElement('div');
-  body.className='cardbody';
-  const title=document.createElement('h3');
-  title.textContent=a.title;
-  const desc=document.createElement('p');
-  desc.textContent=a.desc;
-  const bottom=document.createElement('div');
-  bottom.className='cardbottom';
-  const price=document.createElement('div');
-  price.className='price';
-  price.textContent=a.price;
-  const small=document.createElement('small');
-  small.textContent=a.unit;
-  price.append(small);
-  const button=document.createElement('button');
-  button.className='btn';
-  button.textContent='Ver detalles';
-  button.onclick=()=>showDetails(a);
-  bottom.append(price,button);
-  body.append(title,desc,bottom);
-  card.append(photo,body);
-  cards.append(card);
- });
-}
+        const description = document.createElement("p");
+        description.textContent = item.description;
 
-const modal=document.getElementById('modal');
-const modalTitle=document.getElementById('modal-title');
-const modalContent=document.getElementById('modal-content');
+        const price = document.createElement("div");
+        price.className = "price";
+        price.textContent = item.price;
 
-function showDetails(a){
- modalTitle.textContent=a.title;
- modalContent.innerHTML='';
- function add(tag,text){
-  const el=document.createElement(tag);
-  el.textContent=text;
-  modalContent.append(el);
- }
- add('p',a.desc);
- add('p','Precio de referencia: '+a.price+' ('+a.unit+').');
- add('p','Duración: '+a.duration+'.');
- add('h3','Qué incluye');
- const list1=document.createElement('ul');
- a.includes.forEach(x=>{const li=document.createElement('li');li.textContent=x;list1.append(li)});
- modalContent.append(list1);
- add('h3','No incluido / por confirmar');
- const list2=document.createElement('ul');
- a.excludes.forEach(x=>{const li=document.createElement('li');li.textContent=x;list2.append(li)});
- modalContent.append(list2);
- add('h3','Condiciones importantes');
- add('p',a.conditions);
- add('p','Antes de pagar, solicita por escrito fecha, disponibilidad, precio total, proveedor e inclusiones.');
- const link=document.createElement('a');
- link.className='btn';
- link.href=WHATSAPP+encodeURIComponent('Hola, quiero información y disponibilidad para: '+a.title+'. ¿Me confirman fecha, precio final, inclusiones y condiciones?');
- link.target='_blank';
- link.rel='noopener';
- link.textContent='Consultar por WhatsApp';
- modalContent.append(link);
- modal.classList.add('open');
- document.body.style.overflow='hidden';
-}
+        const actions = document.createElement("div");
+        actions.className = "card-actions";
 
-document.getElementById('filters').addEventListener('click',e=>{
- const button=e.target.closest('button[data-filter]');
- if(!button)return;
- document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b===button));
- render(button.dataset.filter);
-});
+        const detailButton = document.createElement("button");
+        detailButton.className = "btn btn-dark";
+        detailButton.textContent = "Más información";
+        detailButton.type = "button";
+        detailButton.addEventListener("click", () => showDetails(item));
 
-function closeModal(){
- modal.classList.remove('open');
- document.body.style.overflow='';
-}
-document.getElementById('close').addEventListener('click',closeModal);
-modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
-document.getElementById('year').textContent=new Date().getFullYear();
-render();
-</script>
+        const whatsapp = document.createElement("a");
+        whatsapp.className = "btn";
+        whatsapp.textContent = "Consultar";
+        whatsapp.href = makeWhatsAppLink(item.title);
+        whatsapp.target = "_blank";
+        whatsapp.rel = "noopener";
+
+        actions.append(detailButton, whatsapp);
+        body.append(title, description, price, actions);
+        card.append(imageWrap, body);
+        cardsContainer.append(card);
+      });
+    }
+
+    function makeWhatsAppLink(title) {
+      const message = "Hola, quiero información sobre: " + title + ". ¿Me pueden compartir disponibilidad y detalles?";
+      return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(message);
+    }
+
+    function showDetails(item) {
+      document.getElementById("modalImage").src = item.image;
+      document.getElementById("modalImage").alt = item.title;
+      document.getElementById("modalTitle").textContent = item.title;
+      document.getElementById("modalDescription").textContent = item.description;
+      document.getElementById("modalPrice").textContent = item.price;
+      document.getElementById("modalNote").textContent = item.note;
+      document.getElementById("modalWhatsapp").href = makeWhatsAppLink(item.title);
+      document.getElementById("detailsModal").classList.add("open");
+    }
+
+    function renderGallery() {
+      const gallery = document.getElementById("gallery");
+      galleryImages.forEach(file => {
+        const button = document.createElement("button");
+        button.className = "gallery-item";
+        button.type = "button";
+        button.setAttribute("aria-label", "Ampliar fotografía");
+
+        const image = document.createElement("img");
+        image.src = file;
+        image.alt = "Fotografía de El Cuyo y sus experiencias";
+        image.loading = "lazy";
+        image.onerror = () => {
+          button.remove();
+        };
+        button.append(image);
+        button.addEventListener("click", () => {
+          document.getElementById("lightboxImage").src = file;
+          document.getElementById("lightbox").classList.add("open");
+        });
+        gallery.append(button);
+      });
+    }
+
+    function renderVideos() {
+      const grid = document.getElementById("videoGrid");
+      videos.forEach(item => {
+        const card = document.createElement("article");
+        card.className = "video-card";
+
+        const video = document.createElement("video");
+        video.src = item.file;
+        video.controls = true;
+        video.preload = "none";
+        video.playsInline = true;
+        video.setAttribute("aria-label", item.title);
+        video.onerror = () => card.remove();
+
+        const title = document.createElement("p");
+        title.textContent = item.title;
+
+        card.append(video, title);
+        grid.append(card);
+      });
+    }
+
+    document.querySelectorAll(".filter").forEach(button => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".filter").forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+        activeFilter = button.dataset.filter;
+        renderCards();
+      });
+    });
+
+    searchInput.addEventListener("input", renderCards);
+
+    document.querySelectorAll("[data-close]").forEach(button => {
+      button.addEventListener("click", () => {
+        document.getElementById(button.dataset.close).classList.remove("open");
+      });
+    });
+
+    document.querySelectorAll(".modal").forEach(modal => {
+      modal.addEventListener("click", event => {
+        if (event.target === modal) modal.classList.remove("open");
+      });
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        document.querySelectorAll(".modal.open").forEach(modal => modal.classList.remove("open"));
+      }
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    renderCards();
+    renderGallery();
+    renderVideos();
+  </script>
 </body>
 </html>
