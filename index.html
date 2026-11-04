@@ -385,7 +385,18 @@ footer p {color:#c6d9d9;font-size:.9rem}
   object-fit:contain;
   background:#edf3f0;
 }
+
 .modal-content {padding:25px}
+.modal-content > .eyebrow {color:var(--blue);background:#e4f5f1;border:0}
+.tour-facts {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:18px 0}
+.tour-fact {background:#eef7f4;border:1px solid #d8ebe5;border-radius:14px;padding:13px}
+.tour-fact strong {display:block;color:var(--navy);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
+.tour-fact span {display:block;color:var(--ink);font-weight:750;margin-top:3px}
+.tour-detail-section {margin:20px 0;padding:18px;background:#fffaf1;border:1px solid #f0e6d5;border-radius:16px}
+.tour-detail-section h3 {margin:0 0 10px;color:var(--navy)}
+.tour-detail-section ol,.tour-detail-section ul {margin:0;padding-left:22px;color:var(--muted)}
+.tour-detail-section li {padding:5px 0}
+
 .modal-content h2 {color:var(--navy);margin-top:0}
 .modal-close {
   position:absolute;
@@ -435,7 +446,7 @@ footer p {color:#c6d9d9;font-size:.9rem}
   .gallery-item {min-height:160px;padding:5px}
   .gallery-item img {height:160px}
   .video-grid {grid-template-columns:1fr}
-  .contact-photo {height:260px}
+  .tour-facts {grid-template-columns:1fr 1fr}\n  .contact-photo {height:260px}
 }
 </style>
 </head>
@@ -574,8 +585,18 @@ footer p {color:#c6d9d9;font-size:.9rem}
 <button class="modal-close" data-close="detailsModal" aria-label="Cerrar">×</button>
 <img id="modalImage" src="" alt="">
 <div class="modal-content">
+<span class="eyebrow">FICHA TÉCNICA DEL TOUR</span>
 <h2 id="modalTitle"></h2>
 <p id="modalDescription"></p>
+<div class="tour-facts" id="modalFacts"></div>
+<div class="tour-detail-section" id="modalRouteSection" hidden>
+<h3>Recorrido y paradas</h3>
+<ol id="modalRoute"></ol>
+</div>
+<div class="tour-detail-section" id="modalIncludesSection" hidden>
+<h3>¿Qué incluye?</h3>
+<ul id="modalIncludes"></ul>
+</div>
 <p class="price" id="modalPrice"></p>
 <p class="note" id="modalNote"></p>
 <a class="btn" id="modalWhatsapp" href="#" target="_blank" rel="noopener">Consultar por WhatsApp</a>
@@ -629,20 +650,40 @@ description:"Una experiencia nocturna para observar el fenómeno natural de la b
 note:"Duración aproximada: 2 horas. Recogida en tu hotel o alojamiento durante tu estancia; traslado en cuatrimoto a una playa virgen a unos 3.5 km de El Cuyo, guía acompañante y regreso a tu alojamiento. Salidas habituales: 8:30 p.m. o 9:30 p.m. No incluye snack. La intensidad del fenómeno depende de las condiciones naturales y no se puede garantizar."
 },
 {
-{
-title:"Tour en cuatrimotos a Las Coloradas",
-category:"aventura",
-image:"cuatrimotos_can_am_commander_1000r.webp",
-price:"$3,650 MXN por moto",
-description:"Vive un recorrido de aventura en racer y cuatrimoto rumbo a Las Coloradas, disfrutando el camino y los paisajes de la región.",
-note:"Duración aproximada: 5 horas. Cada moto tiene capacidad para 2 personas. Confirma disponibilidad, ruta exacta e inclusiones antes de reservar."
-},
-title:"Tour en cuatrimoto por La UMA",
+title:"Las Coloradas en cuatrimoto Can-Am Outlander",
 category:"aventura",
 image:"cuatrimotos_can_am_outlander_atv.webp",
-price:"$1,800 MXN por tour",
-description:"Recorre un espacio natural de aproximadamente 30 hectáreas en una experiencia de aventura.",
-note:"Referencia: una moto para dos personas, recorrido aproximado de 2.5 horas y ubicación a unos 15 minutos de El Cuyo. Confirma disponibilidad."
+price:"$3,650 MXN por vehículo",
+description:"Recorre senderos de arena, playas vírgenes y paisajes naturales rumbo a Las Coloradas en una cuatrimoto Can-Am Outlander.",
+note:"Ficha del recorrido: duración aproximada de 5 horas; capacidad de 2 personas por cuatrimoto. Incluye botellas de agua. Consulta disponibilidad y confirma condiciones antes de reservar.",
+duration:"5 horas aproximadamente",
+capacity:"2 personas por cuatrimoto",
+includes:["Botellas de agua"],
+route:[
+"La Ría (laguna): conoce el entorno de las salinas y la tradición de extracción de sal.",
+"Playa virgen: parada para apreciar el paisaje y observar aves como flamencos, pelícanos, cormoranes y garzas.",
+"El punto más estrecho: franja de tierra entre la laguna y el mar, ideal para fotografías.",
+"Puerto de Las Coloradas y charcas rosas: visita los paisajes característicos de las salinas.",
+"Playa virgen de regreso: parada para relajarse y disfrutar del mar, según las condiciones del día."
+]
+},
+{
+title:"Las Coloradas en tubular / buggy",
+category:"aventura",
+image:"cuatrimotos_polaris_rzr_pro_xp.webp",
+price:"$1,500 MXN por persona (1–3) · $1,200 MXN por persona (4–8)",
+description:"Vive la misma aventura todo terreno rumbo a Las Coloradas a bordo de un vehículo tubular tipo RZR, por senderos de arena y paisajes naturales.",
+note:"Ficha del recorrido: duración aproximada de 5 horas. Tarifas por persona según tamaño del grupo. Incluye botellas de agua. Confirma disponibilidad, capacidad del vehículo y condiciones antes de reservar.",
+duration:"5 horas aproximadamente",
+capacity:"Tarifa de 1 a 3 personas o de 4 a 8 personas, según la opción",
+includes:["Botellas de agua"],
+route:[
+"La Ría (laguna): conoce el entorno de las salinas y la tradición de extracción de sal.",
+"Playa virgen: parada para apreciar el paisaje y observar aves como flamencos, pelícanos, cormoranes y garzas.",
+"El punto más estrecho: franja de tierra entre la laguna y el mar, ideal para fotografías.",
+"Puerto de Las Coloradas y charcas rosas: visita los paisajes característicos de las salinas.",
+"Playa virgen de regreso: parada para relajarse y disfrutar del mar, según las condiciones del día."
+]
 },
 {
 title:"Experiencias en UTV / Side-by-Side",
@@ -924,6 +965,44 @@ function showDetails(item) {
   document.getElementById("modalPrice").textContent = item.price;
   document.getElementById("modalNote").textContent = item.note;
   document.getElementById("modalWhatsapp").href = makeWhatsAppLink(item.title);
+
+  const facts = document.getElementById("modalFacts");
+  facts.innerHTML = "";
+  const factItems = [
+    ["Duración", item.duration || "Consultar"],
+    ["Capacidad", item.capacity || "Consultar con el proveedor"]
+  ];
+  factItems.forEach(([label, value]) => {
+    const fact = document.createElement("div");
+    fact.className = "tour-fact";
+    const strong = document.createElement("strong");
+    strong.textContent = label;
+    const span = document.createElement("span");
+    span.textContent = value;
+    fact.append(strong, span);
+    facts.append(fact);
+  });
+
+  const routeSection = document.getElementById("modalRouteSection");
+  const routeList = document.getElementById("modalRoute");
+  routeList.innerHTML = "";
+  routeSection.hidden = !item.route || !item.route.length;
+  (item.route || []).forEach(stop => {
+    const li = document.createElement("li");
+    li.textContent = stop;
+    routeList.append(li);
+  });
+
+  const includesSection = document.getElementById("modalIncludesSection");
+  const includesList = document.getElementById("modalIncludes");
+  includesList.innerHTML = "";
+  includesSection.hidden = !item.includes || !item.includes.length;
+  (item.includes || []).forEach(detail => {
+    const li = document.createElement("li");
+    li.textContent = detail;
+    includesList.append(li);
+  });
+
   document.getElementById("detailsModal").classList.add("open");
 }
 
