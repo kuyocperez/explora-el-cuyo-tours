@@ -531,8 +531,8 @@ footer p {color:#c6d9d9;font-size:.9rem}
 <div class="container">
 <div class="section-heading">
 <span class="eyebrow">MIRA EL DESTINO</span>
-<h2>Videos de nuestras experiencias</h2>
-<p>Reproduce los videos y conoce un poco más de El Cuyo.</p>
+<h2>VIVE EL RECORRIDO</h2>
+<p>Déjate llevar por los paisajes, el mar y las experiencias que hacen especial a El Cuyo.</p>
 </div>
 <div class="video-grid" id="videoGrid"></div>
 </div>
@@ -626,15 +626,23 @@ category:"naturaleza",
 image:"sinclasificar_bioluminiscencia_olas.webp",
 price:"$850 MXN por persona",
 description:"Una experiencia nocturna para observar el fenómeno natural de la bioluminiscencia.",
-note:"Duración aproximada: 2 horas. Salidas habituales: 8:30 p.m. o 9:30 p.m. Incluye traslado desde tu alojamiento en cuatrimoto, guía y regreso. La intensidad del fenómeno depende de las condiciones naturales y no se puede garantizar."
+note:"Duración aproximada: 2 horas. Recogida en tu hotel o alojamiento durante tu estancia; traslado en cuatrimoto a una playa virgen a unos 3.5 km de El Cuyo, guía acompañante y regreso a tu alojamiento. Salidas habituales: 8:30 p.m. o 9:30 p.m. No incluye snack. La intensidad del fenómeno depende de las condiciones naturales y no se puede garantizar."
 },
 {
 title:"Tour en cuatrimoto por La UMA",
 category:"aventura",
-image:"cuatrimotos_tour_utv_grupo.webp",
+image:"cuatrimotos_can_am_outlander_atv.webp",
 price:"$1,800 MXN por tour",
 description:"Recorre un espacio natural de aproximadamente 30 hectáreas en una experiencia de aventura.",
 note:"Referencia: una moto para dos personas, recorrido aproximado de 2.5 horas y ubicación a unos 15 minutos de El Cuyo. Confirma disponibilidad."
+},
+{
+title:"Experiencias en UTV / Side-by-Side",
+category:"aventura",
+image:"cuatrimotos_can_am_defender_hd9.webp",
+price:"Consultar",
+description:"Conoce opciones de aventura en vehículos UTV o Side-by-Side, con volante y asientos.",
+note:"Servicio distinto al recorrido en cuatrimoto ATV. Confirma modelo, ruta, capacidad, disponibilidad y tarifa."
 },
 {
 title:"Tubular y buggy",
@@ -659,6 +667,14 @@ image:"h02-sup.jpg",
 price:"$500 MXN / 2 horas",
 description:"Disfruta del mar sobre una tabla de paddle board.",
 note:"Renta libre. Consulta disponibilidad y condiciones del servicio."
+},
+{
+title:"Windfoil",
+category:"agua",
+image:"kitesurf_cometas_en_playa.webp",
+price:"Consultar",
+description:"Consulta opciones para practicar windfoil y conocer esta modalidad de navegación con foil.",
+note:"Imagen ilustrativa. Clases, equipo, disponibilidad y condiciones deben confirmarse antes de reservar."
 },
 {
 title:"Kitesurf",
@@ -711,20 +727,86 @@ note:"Consulta recorridos, horarios y disponibilidad."
 ];
 
 const galleryImages = [
-"coloradas_flamenco_en_agua.webp",
-"coloradas_holbox_letras_playa_bicicleta.webp",
-"coloradas_letras_coloridas_letrero.webp",
-"lancha_atardecer_chalecos_personas.webp",
-"lancha_azul_blanca_chalecos_ninos.webp",
-"lancha_mayrani_paseo_familia.webp",
-"sinclasificar_hamacas_en_el_mar.webp",
-"sinclasificar_atardecer_dunas_personas.webp",
-"sinclasificar_faro_el_cuyo_noche.webp",
-"sinclasificar_sombrillas_sillas_playa.webp",
-"kitesurf_cometa_en_el_aire_personas.webp",
-"cuatrimotos_utv_azul_logo_camino.webp",
-"hospedaje_edificio_dos_mares.webp",
-"sinclasificar_tortuga_bebe_en_mano.webp"
+  "coloradas_flamenco_en_agua.webp",
+  "coloradas_flamenco_rosa.webp",
+  "coloradas_holbox_letras_playa_bicicleta.webp",
+  "coloradas_letras_coloridas_letrero.webp",
+  "coloradas_personas_canal_salinas.webp",
+  "coloradas_personas_laguna_rosa.webp",
+  "cuatrimotos_utv_azul_logo_camino.webp",
+  "cuatrimotos_buggy_verde_laguna.webp",
+  "cuatrimotos_can_am_commander_1000r.webp",
+  "cuatrimotos_can_am_defender_hd9.webp",
+  "cuatrimotos_can_am_outlander_atv.webp",
+  "cuatrimotos_polaris_rzr_pro_xp.webp",
+  "cuatrimotos_tour_utv_grupo.webp",
+  "g02-kite-1.jpg",
+  "g03-kite-2.jpg",
+  "g04-kite-3.jpg",
+  "g05-bote-clientes.jpg",
+  "g06-van-grupo.jpg",
+  "g07-pareja-coloradas.jpg",
+  "g08-atv-coloradas.jpg",
+  "g09-utv-grupo.jpg",
+  "g11-atv-fila.jpg",
+  "g12-banana-1.jpg",
+  "g13-auto-playa.jpg",
+  "g14-banana-2.jpg",
+  "galeria-grupo-mar.jpg",
+  "h02-sup.jpg",
+  "h03-kayak-1.jpg",
+  "h04-kayak-2.jpg",
+  "h06-pareja-flamencos.jpg",
+  "h07-utv-logo.jpg",
+  "h08-utv-grupo.jpg",
+  "h09-atv-laguna.jpg",
+  "h10-atv-grupo.jpg",
+  "hospedaje_edificio_dos_mares.webp",
+  "hospedaje_recamara_vista_al_mar.webp",
+  "kitesurf_cometa_gris_amarilla_playa.webp",
+  "kitesurf_cometa_en_el_aire_personas.webp",
+  "kitesurf_cometas_en_playa.webp",
+  "lancha_ancia_grupo_playa_julio.webp",
+  "lancha_atardecer_chalecos_personas.webp",
+  "lancha_azul_blanca_chalecos_ninos.webp",
+  "lancha_banco_arena_grupo_agua.webp",
+  "lancha_mayrani_paseo_familia.webp",
+  "lancha_pesca_nino_pescado_chalecos.webp",
+  "masajes_playa_el_cuyo.webp",
+  "sesiones_mujer_atardecer_camiseta.webp",
+  "sesiones_pareja_perro_playa_camisetas.webp",
+  "sinclasificar_atardecer_dunas_personas.webp",
+  "sinclasificar_atardecer_faro_muelle.webp",
+  "sinclasificar_atardecer_marca_explora.webp",
+  "sinclasificar_atardecer_palmeras_roca.webp",
+  "sinclasificar_atardecer_playa_bote.webp",
+  "sinclasificar_bioluminiscencia_olas.webp",
+  "sinclasificar_bioluminiscencia_puntos.webp",
+  "sinclasificar_cenote_nadadores.webp",
+  "sinclasificar_delfines_mar.webp",
+  "sinclasificar_faro_el_cuyo_noche.webp",
+  "sinclasificar_flor_azul_playa.webp",
+  "sinclasificar_hamacas_en_el_mar.webp",
+  "sinclasificar_mar_atardecer.webp",
+  "sinclasificar_muelle_personas_cormoranes.webp",
+  "sinclasificar_muelle_playa_aerea.webp",
+  "sinclasificar_mural_flamencos_faro.webp",
+  "sinclasificar_mural_jaguar.webp",
+  "sinclasificar_persona_en_el_mar.webp",
+  "sinclasificar_paraguas_noche_faro_tortugas.webp",
+  "sinclasificar_sombrillas_sillas_playa.webp",
+  "sinclasificar_toallas_velas_1.webp",
+  "sinclasificar_toallas_velas_2.webp",
+  "sinclasificar_tortuga_bebe_en_mano.webp",
+  "sinclasificar_torre_agua_pueblo.webp",
+  "tour-aves.jpg",
+  "tour-bote-ancla.jpg",
+  "tour-bote-chalecos.jpg",
+  "tour-bote-grupo.jpg",
+  "tour-pesca-clientes.jpg",
+  "tour-pesca.jpg",
+  "tour-utv-grupo.jpg",
+  "tour-kite.jpg"
 ];
 
 /* Videos: se conserva la ruta exacta de cada archivo MP4 */
@@ -896,6 +978,9 @@ function renderVideos() {
 
     video.addEventListener("loadedmetadata", () => {
       error.hidden = true;
+      if (video.videoWidth && video.videoHeight) {
+        frame.style.aspectRatio = video.videoWidth + " / " + video.videoHeight;
+      }
     });
 
     frame.append(video, error);
