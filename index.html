@@ -446,8 +446,68 @@ footer p {color:#c6d9d9;font-size:.9rem}
   .gallery-item {min-height:160px;padding:5px}
   .gallery-item img {height:160px}
   .video-grid {grid-template-columns:1fr}
-  .tour-facts {grid-template-columns:1fr 1fr}\n  .contact-photo {height:260px}
+  .tour-facts {grid-template-columns:1fr 1fr}
+  .contact-photo {height:260px}
 }
+ 
+/* Identidad visual renovada: costa, mar y arena */
+:root {
+  --navy:#07364a;
+  --blue:#087f8c;
+  --turquoise:#27c2b5;
+  --cream:#fbf8f0;
+  --ink:#173640;
+  --muted:#61777b;
+  --coral:#f28b72;
+  --shadow:0 16px 42px rgba(5,48,63,.13);
+  --radius:22px;
+}
+body {background:linear-gradient(180deg,#fffdf8 0%,#f5faf7 100%); color:var(--ink)}
+.topbar {background:linear-gradient(90deg,#07364a,#087f8c);letter-spacing:.02em}
+header {background:rgba(255,253,248,.94);box-shadow:0 5px 24px rgba(7,54,74,.06)}
+.brand {letter-spacing:-.02em}
+.brand img {border-radius:14px}
+.btn {background:linear-gradient(135deg,#35d0bd,#9be5d7);color:#07364a;box-shadow:0 7px 18px rgba(39,194,181,.18);transition:transform .2s,box-shadow .2s}
+.btn:hover {transform:translateY(-2px);box-shadow:0 10px 22px rgba(39,194,181,.25)}
+.btn-dark {background:linear-gradient(135deg,#07364a,#0b7180);color:#fff}
+.btn-outline {background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.8);color:#fff;box-shadow:none}
+.hero {background-image:linear-gradient(90deg,rgba(3,35,49,.82),rgba(3,35,49,.24)),url("hero-coloradas.jpg");}
+.hero h1 {text-wrap:balance}
+.hero .eyebrow {background:rgba(39,194,181,.18);border-color:rgba(255,255,255,.4)}
+.section-heading h2,.intro-copy h2 {letter-spacing:-.04em}
+.section-heading .eyebrow,.intro-copy .eyebrow {color:#087f8c;background:#e2f5ef;border-radius:30px;padding:7px 13px}
+.filters {scrollbar-width:thin}
+.filter {transition:all .2s}
+.filter.active,.filter:hover {background:linear-gradient(135deg,#07364a,#087f8c);border-color:transparent}
+.search-wrap input {box-shadow:0 6px 20px rgba(7,54,74,.06)}
+.card {border:1px solid rgba(7,54,74,.07);transition:transform .22s,box-shadow .22s}
+.card:hover {transform:translateY(-5px);box-shadow:0 20px 46px rgba(7,54,74,.16)}
+.card-image {background:linear-gradient(135deg,#e7f4ef,#e8f3f6)}
+.card-image img {border-radius:15px}
+.tag {background:#fff;color:#087f8c;box-shadow:0 4px 14px rgba(7,54,74,.09)}
+.card h3 {letter-spacing:-.02em}
+.price {color:#087f8c}
+.card-actions .btn {min-height:44px}
+.feature-band {background:radial-gradient(circle at 85% 15%,rgba(39,194,181,.22),transparent 34%),linear-gradient(120deg,#052f42,#087786)}
+.gallery-item {background:linear-gradient(135deg,#e7f4ef,#e8f3f6);border:1px solid rgba(7,54,74,.06);transition:transform .2s,box-shadow .2s}
+.gallery-item:hover {transform:translateY(-3px);box-shadow:var(--shadow)}
+.video-card,.contact-panel {border:1px solid rgba(7,54,74,.07)}
+.contact-panel {border-radius:24px}
+footer {background:linear-gradient(120deg,#042b3b,#07556a)}
+.whatsapp-float {box-shadow:0 10px 28px rgba(0,0,0,.25);border:3px solid #fff}
+.modal {backdrop-filter:blur(7px)}
+.modal-box {border:1px solid rgba(255,255,255,.7);box-shadow:0 25px 80px rgba(0,0,0,.3)}
+.modal-content {padding:clamp(20px,4vw,30px)}
+.modal-content > .eyebrow {display:inline-block;border-radius:30px;padding:7px 13px}
+.tour-fact {background:linear-gradient(145deg,#eff9f5,#e8f5f7);border-color:#d8ebe5}
+.tour-detail-section {background:#fffaf2;border-color:#f0e6d5}
+.tour-detail-section h3 {letter-spacing:-.02em}
+@media(max-width:650px) {
+  .card {border-radius:20px}
+  .card-image {height:250px}
+  .hero {background-position:58% center}
+}
+
 </style>
 </head>
 
@@ -590,11 +650,11 @@ footer p {color:#c6d9d9;font-size:.9rem}
 <p id="modalDescription"></p>
 <div class="tour-facts" id="modalFacts"></div>
 <div class="tour-detail-section" id="modalRouteSection" hidden>
-<h3>Recorrido y paradas</h3>
+<h3>Tu experiencia paso a paso</h3>
 <ol id="modalRoute"></ol>
 </div>
 <div class="tour-detail-section" id="modalIncludesSection" hidden>
-<h3>¿Qué incluye?</h3>
+<h3>Servicios incluidos</h3>
 <ul id="modalIncludes"></ul>
 </div>
 <p class="price" id="modalPrice"></p>
@@ -640,6 +700,21 @@ image:"coloradas_personas_laguna_rosa.webp",
 price:"$5,500–$6,500 MXN",
 description:"Conoce los paisajes de las salinas y sus canales en un recorrido en lancha.",
 note:"Precio indicado para 1 a 6 personas. Consulta disponibilidad y condiciones."
+},
+{
+title:"Tour a Holbox: Yalahau y Punta Mosquito",
+category:"naturaleza",
+image:"coloradas_holbox_letras_playa_bicicleta.webp",
+price:"Consultar",
+description:"Descubre Holbox en una excursión que combina naturaleza, aguas cristalinas y tiempo para recorrer la isla.",
+note:"El acceso al ojo de agua Yalahau tiene un costo aproximado de $300 MXN y se paga por separado; no está incluido en el precio del tour. Para grupos de más de 7 personas se contempla un cargo adicional de $750 MXN; confirma el cálculo al reservar.",
+duration:"Consultar horario y duración total",
+capacity:"De 1 a 6 personas",
+route:[
+"Yalahau: visita el ojo de agua antes de llegar a Holbox. La entrada se paga por separado y tiene un costo aproximado de $300 MXN.",
+"Punta Mosquito: conoce esta playa y disfruta de sus paisajes naturales.",
+"Isla Holbox: tiempo libre de aproximadamente 1 hora y media para caminar y conocer el lugar."
+]
 },
 {
 title:"Bioluminiscencia",
@@ -691,7 +766,7 @@ category:"aventura",
 image:"h09-atv-laguna.jpg",
 price:"$1,700 MXN por tour",
 description:"Explora La UMA San Manuel en una experiencia de aventura entre naturaleza y caminos rurales cerca de El Cuyo.",
-note:"Recorrido aproximado de 2 a 2.5 horas. Referencia: una cuatrimoto para dos personas. Confirma disponibilidad y condiciones."
+note:"Recorrido aproximado de 2 a 2.5 horas. Referencia: una cuatrimoto para dos personas. Confirma disponibilidad y condiciones.",
 duration:"2 a 2.5 horas aproximadamente",
 capacity:"2 personas por cuatrimoto",
 includes:["Recorrido guiado por La UMA"]
@@ -936,7 +1011,7 @@ function renderCards() {
     const detail = document.createElement("button");
     detail.type = "button";
     detail.className = "btn btn-dark";
-    detail.textContent = "Más información";
+    detail.textContent = "Ver detalles del tour";
     detail.addEventListener("click", () => showDetails(item));
 
     const whatsapp = document.createElement("a");
