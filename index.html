@@ -475,6 +475,10 @@ footer p {color:#c6d9d9;font-size:.9rem}
 .seo-copy {max-width:900px;margin:0 auto;color:var(--muted)}
 .seo-copy h3 {color:var(--navy);margin:24px 0 8px;font-size:1.2rem}
 .seo-copy p {margin:0 0 14px}
+.tour-seo-links {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:22px 0}
+.tour-seo-links a {display:block;padding:13px 16px;border:1px solid #d8ebe5;border-radius:13px;background:#f1f8f5;color:var(--navy);font-weight:750}
+.tour-seo-links a:hover {background:#e2f5ef;color:var(--blue)}
+@media(max-width:650px){.tour-seo-links{grid-template-columns:1fr}}
 @media(max-width:900px) {
   .cards {grid-template-columns:repeat(2,minmax(0,1fr))}
   .video-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -620,6 +624,13 @@ footer {background:linear-gradient(120deg,#042b3b,#07556a)}
 <h3>Pesca, Holbox y experiencias naturales</h3>
 <p>Organiza una salida de pesca de fondo o pesca de orilla, consulta excursiones a <strong>Holbox</strong> con visita a Yalahau y Punta Mosquito, o pregunta por la experiencia nocturna de <strong>bioluminiscencia en El Cuyo</strong>. También puedes consultar kitesurf, kayak, paddle board y transporte privado.</p>
 <p>Explora El Cuyo Tours te ayuda a coordinar experiencias con proveedores locales. Los horarios, las condiciones del mar y los avistamientos de fauna pueden variar; confirma siempre la disponibilidad y los detalles de tu actividad.</p>
+<nav class="tour-seo-links" aria-label="Fichas detalladas de tours">
+<a href="tours/ria-lagartos-bano-maya.html">Tour en lancha por Ría Lagartos y baño maya</a>
+<a href="tours/holbox-yalahau-punta-mosquito.html">Excursión a Holbox, Yalahau y Punta Mosquito</a>
+<a href="tours/las-coloradas-en-lancha.html">Tour en lancha a Las Coloradas</a>
+<a href="tours/pesca-en-el-cuyo.html">Pesca de fondo y pesca de orilla en El Cuyo</a>
+<a href="tours/las-coloradas-cuatrimotos.html">Las Coloradas en cuatrimoto Can-Am o tubular RZR</a>
+</nav>
 </div>
 </div>
 </section>
@@ -728,6 +739,7 @@ footer {background:linear-gradient(120deg,#042b3b,#07556a)}
 <p class="price" id="modalPrice"></p>
 <p class="note" id="modalNote"></p>
 <a class="btn" id="modalWhatsapp" href="#" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+<a class="btn btn-dark" id="modalFullPageLink" href="#" hidden>Ver ficha completa del recorrido</a>
 </div>
 </div>
 </div>
@@ -747,6 +759,7 @@ const WHATSAPP = "5219841858200";
 const activities = [
 {
 title:"Ría Lagartos: baño maya y observación de aves",
+page:"tours/ria-lagartos-bano-maya.html",
 category:"lancha",
 image:"tour-bote-grupo.jpg",
 price:"$3,500 MXN por lancha (1–6 personas)",
@@ -764,6 +777,7 @@ route:[
 },
 {
 title:"Pesca de fondo",
+page:"tours/pesca-en-el-cuyo.html",
 category:"lancha",
 image:"tour-pesca.jpg",
 price:"$5,500 MXN",
@@ -776,6 +790,7 @@ includes:["Botellas de agua purificada","Frutas del día"]
 },
 {
 title:"Pesca de orilla",
+page:"tours/pesca-en-el-cuyo.html",
 category:"lancha",
 image:"lancha_pesca_nino_pescado_chalecos.webp",
 price:"$4,500 MXN",
@@ -788,6 +803,7 @@ includes:["Botellas de agua purificada","Frutas del día"]
 },
 {
 title:"Las Coloradas en lancha",
+page:"tours/las-coloradas-en-lancha.html",
 category:"naturaleza",
 image:"coloradas_personas_laguna_rosa.webp",
 price:"$5,500 MXN (1–6 personas)",
@@ -800,6 +816,7 @@ includes:["Botellas de agua purificada","Frutas del día"]
 },
 {
 title:"Tour a Holbox: Yalahau y Punta Mosquito",
+page:"tours/holbox-yalahau-punta-mosquito.html",
 category:"naturaleza",
 image:"coloradas_holbox_letras_playa_bicicleta.webp",
 price:"$6,500 MXN (1–6 personas)",
@@ -826,6 +843,7 @@ note:"Duración aproximada: 2 horas. Recogida en tu hotel o alojamiento durante 
 },
 {
 title:"Las Coloradas en cuatrimoto Can-Am Outlander",
+page:"tours/las-coloradas-cuatrimotos.html",
 category:"aventura",
 image:"cuatrimotos_can_am_outlander_atv.webp",
 price:"$3,650 MXN por vehículo",
@@ -845,6 +863,7 @@ route:[
 },
 {
 title:"Las Coloradas en tubular / buggy",
+page:"tours/las-coloradas-cuatrimotos.html",
 category:"aventura",
 image:"cuatrimotos_polaris_rzr_pro_xp.webp",
 price:"$1,500 MXN por persona (1–3) · $1,200 MXN por persona (4–8)",
@@ -1143,6 +1162,9 @@ function showDetails(item) {
   document.getElementById("modalPrice").textContent = item.price;
   document.getElementById("modalNote").textContent = item.note;
   document.getElementById("modalWhatsapp").href = makeWhatsAppLink(item.title);
+  const fullPageLink = document.getElementById("modalFullPageLink");
+  fullPageLink.hidden = !item.page;
+  if (item.page) fullPageLink.href = item.page;
 
   const facts = document.getElementById("modalFacts");
   facts.innerHTML = "";
