@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://kuyocperez.github.io/explora-el-cuyo-tours/</loc><lastmod>2026-11-04</lastmod></url>
-  <url><loc>https://kuyocperez.github.io/explora-el-cuyo-tours/tours/ria-lagartos-bano-maya.html</loc><lastmod>2026-11-04</lastmod></url>
-  <url><loc>https://kuyocperez.github.io/explora-el-cuyo-tours/tours/holbox-yalahau-punta-mosquito.html</loc><lastmod>2026-11-04</lastmod></url>
-  <url><loc>https://kuyocperez.github.io/explora-el-cuyo-tours/tours/las-coloradas-en-lancha.html</loc><lastmod>2026-11-04</lastmod></url>
-  <url><loc>https://kuyocperez.github.io/explora-el-cuyo-tours/tours/pesca-en-el-cuyo.html</loc><lastmod>2026-11-04</lastmod></url>
-  <url><loc>https://kuyocperez.github.io/explora-el-cuyo-tours/tours/las-coloradas-cuatrimotos.html</loc><lastmod>2026-11-04</lastmod></url>
+  <url>
+    <loc>https://exploraelcuyotours.com/</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
+    <loc>https://exploraelcuyotours.com/tours/ria-lagartos-bano-maya.html</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
+    <loc>https://exploraelcuyotours.com/tours/holbox-yalahau-punta-mosquito.html</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
+    <loc>https://exploraelcuyotours.com/tours/las-coloradas-en-lancha.html</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
+    <loc>https://exploraelcuyotours.com/tours/pesca-en-el-cuyo.html</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
+    <loc>https://exploraelcuyotours.com/tours/las-coloradas-cuatrimotos.html</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
 </urlset>
