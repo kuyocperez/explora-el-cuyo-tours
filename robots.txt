@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kuyocperez.github.io/explora-el-cuyo-tours/sitemap.xml
+Sitemap: https://exploraelcuyotours.com/sitemap.xml
