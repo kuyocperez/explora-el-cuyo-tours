@@ -145,7 +145,7 @@ header {
   color:white;
   background:
     linear-gradient(90deg,rgba(3,34,45,.78),rgba(3,34,45,.18)),
-    url("hero-coloradas.jpg") center/cover no-repeat;
+    url("sinclasificar_muelle_playa_aerea.webp") center/cover no-repeat;
 }
 .hero-content {
   width:min(1120px,100%);
@@ -589,6 +589,88 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #f28b
 }
 @media(prefers-reduced-motion:reduce){.card,.card-image img,.btn{transition:none}}
 
+
+/* Rediseño visual: destino costero, fotografía protagonista y tarjetas limpias */
+:root{--navy:#073b4c;--blue:#087e8b;--turquoise:#20b8b0;--cream:#fffaf1;--ink:#18343b;--muted:#63777b;--shadow:0 16px 42px rgba(7,59,76,.12);--radius:24px}
+body{background:#fbfaf6;color:#173840}
+.topbar{letter-spacing:.025em;background:#062f3c}
+header{background:rgba(255,253,248,.96);box-shadow:0 5px 24px rgba(7,54,74,.06)}
+.nav{min-height:76px}
+.brand{font-weight:850;letter-spacing:-.025em}
+.brand img{width:46px;height:46px;object-fit:contain}
+.nav-links a{font-weight:650;color:#31545a}
+.nav-links a:hover{color:#087e8b}
+.hero{min-height:clamp(500px,66vw,700px);display:flex;align-items:center;background-position:center 52%;background-size:cover;position:relative;isolation:isolate}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,34,46,.78) 0%,rgba(3,34,46,.40) 52%,rgba(3,34,46,.08) 100%);z-index:-1}
+.hero-content{width:min(1120px,100%);margin:auto;padding:85px 24px;color:#fff}
+.hero h1{max-width:760px;font-size:clamp(2.5rem,6vw,5rem);line-height:1.02;letter-spacing:-.055em;text-wrap:balance}
+.hero p{max-width:620px;font-size:clamp(1rem,1.7vw,1.2rem);color:rgba(255,255,255,.92);line-height:1.7}
+.hero .eyebrow{display:inline-flex;align-items:center;padding:8px 14px;border-radius:40px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);font-weight:800;letter-spacing:.1em}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{border-radius:999px;font-weight:800;padding:13px 20px}
+.btn-dark{background:linear-gradient(135deg,#073b4c,#087e8b)}
+section{padding-top:76px;padding-bottom:76px}
+.container{width:min(1180px,calc(100% - 40px));margin-inline:auto}
+.intro-grid{gap:clamp(28px,5vw,64px);align-items:center}
+.intro-grid>img{width:100%;height:440px;object-fit:cover;border-radius:28px;box-shadow:var(--shadow)}
+.intro-copy h2,.section-heading h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.08;letter-spacing:-.045em;color:#073b4c}
+.intro-copy p,.section-heading p{font-size:1.05rem;line-height:1.8;color:#63777b}
+.section-heading{max-width:780px;margin:0 auto 34px;text-align:center}
+.section-heading .eyebrow,.intro-copy .eyebrow{display:inline-block;color:#087f8c;background:#e4f5f0;border-radius:40px;padding:7px 14px;font-weight:800;letter-spacing:.07em}
+.filters{justify-content:center;gap:9px}
+.filter{border-radius:999px;padding:10px 16px;font-weight:750;background:#fff;border:1px solid #e0e9e5;color:#31545a}
+.filter.active{background:#073b4c;color:#fff}
+.search-wrap{max-width:600px;margin:0 auto 26px}
+.search-wrap input{border:1px solid #dce8e3;border-radius:999px;padding:15px 20px;background:#fff}
+.cards-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.card{background:#fff;border:1px solid #e8eeeb;border-radius:24px;overflow:hidden;box-shadow:0 8px 26px rgba(7,59,76,.06);display:flex;flex-direction:column}
+.card:hover{transform:translateY(-5px);box-shadow:0 20px 46px rgba(7,59,76,.13)}
+.card-image{height:250px;position:relative;background:#e8f2ef;padding:0;overflow:hidden}
+.card-image img{width:100%;height:100%;object-fit:cover;border-radius:0}
+.tag{position:absolute;left:14px;top:14px;background:rgba(255,255,255,.94);color:#087e8b;border-radius:999px;padding:6px 11px;font-size:.78rem;font-weight:850}
+.card-body{padding:21px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:1.25rem;line-height:1.25;color:#073b4c;margin:0 0 8px}
+.card-body>p{color:#63777b;font-size:.94rem;line-height:1.65}
+.card-quick-facts{display:flex;flex-wrap:wrap;gap:7px;margin:8px 0 14px}
+.card-quick-facts span{font-size:.76rem;font-weight:750;color:#37636a;background:#edf7f3;border:1px solid #dcece6;border-radius:30px;padding:6px 9px}
+.price{font-size:1.08rem;color:#087e8b;font-weight:900;padding:8px 0 16px}
+.card-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:auto}
+.card-actions .btn{flex:1;min-width:110px;text-align:center;justify-content:center;font-size:.88rem}
+.feature-band{padding:70px 22px;background:linear-gradient(120deg,#052f42,#087786)}
+.gallery-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.gallery-item{padding:0;min-height:190px;border-radius:18px;background:#e8f2ef;overflow:hidden}
+.gallery-item img{width:100%;height:220px;object-fit:cover;background:transparent;transition:transform .4s ease}
+.gallery-item:hover img{transform:scale(1.05)}
+.video-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.video-card{border-radius:20px;background:#fff;overflow:hidden;box-shadow:var(--shadow)}
+.contact-panel{border-radius:26px;padding:clamp(22px,4vw,38px)}
+.contact-photo{height:420px;object-fit:cover;border-radius:26px}
+footer{padding:48px 20px 36px;background:#052d3a}
+.modal-box{border-radius:24px}
+.modal-box>img{height:300px;object-fit:cover}
+@media(max-width:900px){.cards-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.video-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){
+ section{padding-top:54px;padding-bottom:54px}
+ .container{width:calc(100% - 28px)}
+ .hero{min-height:590px;background-position:58% center}
+ .hero-content{padding:75px 20px}
+ .hero h1{font-size:clamp(2.45rem,12vw,3.5rem)}
+ .hero p{font-size:1rem}
+ .intro-grid{grid-template-columns:1fr}
+ .intro-grid>img{height:270px;border-radius:20px}
+ .cards-grid{grid-template-columns:1fr;gap:18px}
+ .card-image{height:240px}
+ .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .gallery-item{min-height:145px;border-radius:13px}
+ .gallery-item img{height:155px}
+ .video-grid{grid-template-columns:1fr}
+ .contact-grid{grid-template-columns:1fr}
+ .contact-photo{height:260px}
+ .filters{justify-content:flex-start;overflow-x:auto;padding-bottom:8px}
+ .filter{white-space:nowrap}
+ .hero-actions .btn{width:100%;text-align:center;justify-content:center}
+}
+
 </style>
 </head>
 
@@ -627,7 +709,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #f28b
 
 <section>
 <div class="container intro-grid">
-<img src="sinclasificar_muelle_playa_aerea.webp" alt="Vista de la costa de El Cuyo" loading="lazy">
+<img src="sinclasificar_atardecer_faro_muelle.webp" alt="Atardecer junto al faro y el muelle de El Cuyo" loading="lazy">
 <div class="intro-copy">
 <span class="eyebrow">VIVE EL DESTINO</span>
 <h2>El Cuyo: naturaleza, tranquilidad y aventura.</h2>
@@ -794,7 +876,7 @@ const activities = [
 title:"Ría Lagartos: baño maya y observación de aves",
 page:"tours/ria-lagartos-bano-maya.html",
 category:"lancha",
-image:"tour-bote-grupo.jpg",
+image:"tour-aves.jpg",
 price:"$3,500 MXN por lancha (1–6 personas)",
 description:"Navega por la Reserva de la Biosfera Ría Lagartos, conoce sus manglares y observa la diversidad de aves de la región. La experiencia incluye el tradicional baño maya con arcilla natural.",
 note:"Salida habitual de 10:00 a. m. a 1:00 p. m. (aproximadamente 3 horas), sujeta a disponibilidad. Los avistamientos dependen de la temporada y de las condiciones naturales.",
