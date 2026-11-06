@@ -814,6 +814,38 @@ section{scroll-margin-top:84px}
  *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
 }
 
+
+
+/* Catálogo continuo: cada experiencia ocupa una fila completa */
+#experiencias .section-heading{margin-bottom:28px}
+#experiencias .cards{display:flex;flex-direction:column;gap:22px;max-width:1040px;margin:0 auto}
+#experiencias .card{display:flex;flex-direction:row;min-height:270px;border-radius:24px;overflow:hidden;align-items:stretch}
+#experiencias .card-image{width:42%;flex:0 0 42%;height:auto;min-height:270px;aspect-ratio:auto}
+#experiencias .card-image img{width:100%;height:100%;min-height:270px;object-fit:cover;transition:transform .65s cubic-bezier(.2,.7,.2,1)}
+#experiencias .card:hover .card-image img{transform:scale(1.055)}
+#experiencias .card-body{flex:1;padding:clamp(20px,3vw,34px);justify-content:center;gap:8px}
+#experiencias .card h3{font-size:clamp(1.25rem,2vw,1.65rem);min-height:0;margin:0}
+#experiencias .card p{font-size:1rem;line-height:1.7}
+#experiencias .price{font-size:1.08rem}
+#experiencias .catalog-group-title{max-width:1040px;width:100%;margin:30px auto 0;padding:0 0 12px;border-bottom:1px solid #dce9e4;color:#073b4c;font-size:clamp(1.35rem,2.4vw,1.8rem);letter-spacing:-.03em}
+#experiencias .catalog-group-title:first-child{margin-top:0}
+#experiencias .catalog-group-title span{display:inline-block;width:8px;height:8px;margin:0 10px 3px 0;border-radius:50%;background:#20b8b0}
+#experiencias .card:nth-of-type(even){flex-direction:row-reverse}
+#experiencias .card{animation:catalogEnter .55s both}
+@keyframes catalogEnter{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:650px){
+ #experiencias .cards{gap:16px}
+ #experiencias .card,#experiencias .card:nth-of-type(even){flex-direction:column;min-height:0}
+ #experiencias .card-image{width:100%;flex:0 0 auto;height:auto;min-height:0;aspect-ratio:16/10}
+ #experiencias .card-image img{height:100%;min-height:0}
+ #experiencias .card-body{padding:19px}
+ #experiencias .catalog-group-title{margin-top:25px;padding-bottom:9px}
+}
+@media(prefers-reduced-motion:reduce){
+ #experiencias .card{animation:none}
+ #experiencias .card-image img{transition:none}
+}
+
 </style>
 </head>
 
@@ -1419,7 +1451,25 @@ function renderCards() {
   cardsContainer.innerHTML = "";
   emptyMessage.style.display = filtered.length ? "none" : "block";
 
+  const categoryLabels = {
+    lancha: "Tours en lancha y pesca",
+    naturaleza: "Naturaleza y excursiones",
+    aventura: "Tours de aventura en cuatrimoto y vehículos todoterreno",
+    rentas: "Renta de equipo y vehículos",
+    agua: "Deportes acuáticos",
+    servicios: "Servicios para tu estancia"
+  };
+  let lastCategory = "";
   filtered.forEach(item => {
+    if (item.category !== lastCategory) {
+      const heading = document.createElement("h3");
+      heading.className = "catalog-group-title";
+      const dot = document.createElement("span");
+      dot.setAttribute("aria-hidden", "true");
+      heading.append(dot, document.createTextNode(categoryLabels[item.category] || "Más experiencias"));
+      cardsContainer.append(heading);
+      lastCategory = item.category;
+    }
     const card = document.createElement("article");
     card.className = "card";
 
