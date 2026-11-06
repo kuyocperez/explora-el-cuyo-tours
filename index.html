@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#073b4c">
-<meta name="description" content="Descubre qué hacer en El Cuyo, Yucatán: tours en lancha, pesca, Ría Lagartos, Las Coloradas, cuatrimotos, renta de bicicletas, kayak, paddle board, RZR / UTV, bioluminiscencia, kitesurf y transporte. Atención local por WhatsApp.">
+<meta name="description" content="Organiza tours y actividades en El Cuyo, Yucatán: paseos en lancha, pesca, Las Coloradas, Ría Lagartos, bioluminiscencia, kitesurf y renta de cuatrimotos, RZR, bicicletas, kayaks y paddle boards. Atención local por WhatsApp.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <link rel="canonical" href="https://exploraelcuyotours.com/">
 <link rel="icon" type="image/png" href="logo.png">
@@ -13,10 +13,12 @@
 <meta property="og:site_name" content="Explora El Cuyo Tours">
 <meta property="og:locale" content="es_MX">
 <meta property="og:title" content="Tours en El Cuyo, Yucatán | Explora El Cuyo Tours">
-<meta property="og:description" content="Tours y experiencias en El Cuyo, Yucatán: lancha, pesca, Ría Lagartos, Las Coloradas, cuatrimotos, bioluminiscencia y kitesurf.">
+<meta property="og:description" content="Tours, actividades y rentas en El Cuyo, Yucatán: lancha, pesca, Las Coloradas, bioluminiscencia, kitesurf, RZR, bicicletas, kayak y paddle board.">
 <meta property="og:url" content="https://exploraelcuyotours.com/">
 <meta property="og:image" content="https://exploraelcuyotours.com/1793985292980.jpg">
+<meta property="og:image:alt" content="Explora El Cuyo Tours: experiencias y paisajes de El Cuyo, Yucatán">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="keywords" content="tours en El Cuyo, qué hacer en El Cuyo, paseos en lancha, pesca, Las Coloradas, Ría Lagartos, bioluminiscencia, renta de RZR, renta de cuatrimotos, bicicletas, kayak, paddle board, kitesurf, Yucatán">
 <meta name="twitter:title" content="Tours en El Cuyo, Yucatán | Explora El Cuyo Tours">
 <meta name="twitter:description" content="Descubre El Cuyo y sus alrededores con experiencias locales en lancha, naturaleza y aventura.">
 <meta name="twitter:image" content="https://exploraelcuyotours.com/1793985292980.jpg">
@@ -751,6 +753,67 @@ button,a{touch-action:manipulation}
 .gallery-item img{object-fit:contain!important;background:#e8f2ef}
 @media(max-width:650px){.whatsapp-float{width:auto!important;height:auto!important;min-width:145px;min-height:54px!important;right:13px;bottom:13px}.gallery-item img{object-fit:contain!important}}
 
+
+/* Pulido visual y accesibilidad: tarjetas, fotografías y navegación */
+:root{--card-radius:22px}
+html{scroll-padding-top:90px}
+body{font-feature-settings:"kern";-webkit-font-smoothing:antialiased}
+section{scroll-margin-top:84px}
+.nav{min-height:72px}
+.nav-links a{padding:9px 0}
+.menu-toggle{min-width:46px;min-height:44px}
+.card{height:100%;border-radius:var(--card-radius);box-shadow:0 10px 30px rgba(7,54,74,.09)}
+.card-image{height:auto;aspect-ratio:16/10;padding:0;background:#eaf2ef}
+.card-image img{width:100%;height:100%;object-fit:cover;object-position:center;border-radius:0}
+.card-body{padding:21px;gap:2px}
+.card h3{font-size:1.16rem;line-height:1.3;min-height:2.6em}
+.card p{line-height:1.55}
+.card-quick-facts{margin:2px 0 12px}
+.price{font-size:1rem;line-height:1.4;padding:10px 0 14px}
+.card-actions{margin-top:auto}
+.card-actions .btn{min-height:46px}
+.gallery-grid{grid-auto-rows:1fr}
+.gallery-item{padding:0;min-height:0;aspect-ratio:4/3;border-radius:17px;background:#eaf2ef}
+.gallery-item img{height:100%;width:100%;object-fit:cover;object-position:center;border-radius:0}
+.intro-grid img,.contact-photo{object-fit:cover;background:#eaf2ef}
+.hero{background-position:center 45%;background-size:cover}
+.whatsapp-float{min-width:154px;min-height:58px;letter-spacing:.01em}
+.whatsapp-float:focus-visible,.btn:focus-visible,.filter:focus-visible,.menu-toggle:focus-visible,.gallery-item:focus-visible{outline:3px solid #f28b72;outline-offset:3px}
+.filter{min-height:42px}
+.search-wrap input{min-height:50px}
+.modal-box img{object-fit:contain}
+@media(max-width:900px){
+ .nav{gap:10px}
+ .nav-links{gap:13px}
+ .card-image{aspect-ratio:16/10}
+}
+@media(max-width:650px){
+ .nav{min-height:64px;flex-wrap:wrap}
+ .nav .btn{padding:10px 14px}
+ .nav-links{display:none;order:4;width:100%;padding:10px 4px 14px;flex-direction:column;align-items:stretch;gap:2px}
+ .nav-links.open{display:flex}
+ .nav-links a{padding:11px 10px;border-radius:10px}
+ .nav-links a:hover{background:#eaf5f1}
+ .menu-toggle{display:inline-flex;align-items:center;justify-content:center}
+ .hero{min-height:520px;background-position:58% center}
+ .hero-content{padding:65px 20px}
+ .hero h1{font-size:clamp(2.25rem,10vw,3.25rem);max-width:15ch}
+ .hero p{font-size:1rem}
+ .intro-grid img{height:250px}
+ .cards{grid-template-columns:1fr;gap:18px}
+ .card-image{aspect-ratio:16/10}
+ .card-body{padding:18px}
+ .card h3{min-height:0}
+ .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .gallery-item{aspect-ratio:1/1}
+ .gallery-item img{height:100%;object-fit:cover}
+ .whatsapp-float{min-width:0;min-height:54px!important;padding:0 16px 0 13px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px))}
+ .contact-grid{gap:18px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
+}
+
 </style>
 </head>
 
@@ -813,7 +876,7 @@ button,a{touch-action:manipulation}
 <h3>Las Coloradas, cuatrimotos y aventura</h3>
 <p>Descubre los paisajes de <strong>Las Coloradas, Yucatán</strong> en recorridos terrestres en cuatrimoto Can-Am o vehículo tubular tipo RZR. Consulta la ruta, las paradas, la duración aproximada y qué incluye cada opción antes de reservar.</p>
 <h3>Pesca, Holbox y experiencias naturales</h3>
-<p>Organiza una salida de pesca de fondo o pesca de orilla, consulta excursiones a <strong>Holbox</strong> con visita a Yalahau y Punta Mosquito, o pregunta por la experiencia nocturna de <strong>bioluminiscencia en El Cuyo</strong>. También puedes consultar windfoil o wingfoil, kitesurf, kayak, paddle board, renta de cuatrimotos, bicicletas y vehículos RZR / UTV todoterreno, además de transporte privado.</p>
+<p>Organiza una salida de pesca de fondo o de orilla, consulta excursiones a <strong>Holbox</strong> con visita a Yalahau y Punta Mosquito, o pregunta por la experiencia nocturna de <strong>bioluminiscencia en El Cuyo</strong>. También ofrecemos información sobre kitesurf, wingfoil, renta de kayak y paddle board, bicicletas, cuatrimotos (ATV) y vehículos todoterreno RZR / UTV, además de transporte privado.</p>
 <p>Explora El Cuyo Tours te ayuda a coordinar experiencias con proveedores locales. Los horarios, las condiciones del mar y los avistamientos de fauna pueden variar; confirma siempre la disponibilidad y los detalles de tu actividad.</p>
 <nav class="tour-seo-links" aria-label="Fichas detalladas de tours">
 <a href="tours/ria-lagartos-bano-maya.html">Tour en lancha por Ría Lagartos y baño maya</a>
@@ -1127,7 +1190,7 @@ keywords:["renta de cuatrimoto","alquiler de ATV","ATV","cuatrimoto en El Cuyo"]
 {
 title:"Renta de RZR / UTV todoterreno",
 category:"rentas",
-image:"cuatrimotos_polaris_rzr_pro_xp.webp",
+image:"h08-utv-grupo.jpg",
 price:"Consultar tarifa y disponibilidad",
 description:"Explora los alrededores de El Cuyo en un vehículo todoterreno tipo RZR / UTV, con volante y asientos para disfrutar la aventura acompañado.",
 note:"Renta sujeta a disponibilidad. Confirma modelo, número de pasajeros, duración, ruta permitida, requisitos de conducción, depósito, seguro y tarifa antes de reservar.",
@@ -1140,7 +1203,7 @@ category:"rentas",
 image:"coloradas_holbox_letras_playa_bicicleta.webp",
 price:"Consultar tarifa y disponibilidad",
 description:"Explora El Cuyo a tu propio ritmo en bicicleta y disfruta de sus calles tranquilas y paisajes costeros.",
-note:"La fotografía es ilustrativa y corresponde a otro destino; estamos pendientes de sustituirla por una imagen propia de bicicletas en El Cuyo. Confirma tarifa, tipo de bicicleta, duración, depósito y disponibilidad.",
+note:"Fotografía ilustrativa de bicicletas. Confirma tarifa, tipo de bicicleta, duración, depósito y disponibilidad antes de reservar.",
 duration:"Por hora o día, según disponibilidad",
 keywords:["renta de bicicleta","alquiler de bicicleta","bicicletas en El Cuyo"]
 },
@@ -1175,7 +1238,7 @@ keywords:["wingfoil","wing foil","windfoil","foil","hidrofoil","deportes acuáti
 title:"Clases de kitesurf · Pura Vida Kite Surf School",
 category:"agua",
 image:"kitesurf_cometa_en_el_aire_personas.webp",
-price:"Cursos desde $3,000 MXN por persona (tarifa grupal publicada)",
+price:"Consultar tarifas del proveedor",
 description:"Aprende kitesurf en El Cuyo con cursos para distintos niveles. Consulta el programa Discovery, Intermedio o Full Course y encuentra la opción adecuada a tu experiencia.",
 note:"Información transcrita del flyer de Pura Vida Kite Surf School compartido para la página. Las tarifas y condiciones pertenecen al proveedor y deben confirmarse antes de reservar. Instagram: @puravida_elcuyo.",
 duration:"3, 6 o 9 horas según el curso",
