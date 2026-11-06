@@ -259,8 +259,11 @@ section {padding:75px 20px}
 .card-image img {
   width:100%;
   height:100%;
-  object-fit:contain;
+  object-fit:cover;
+  object-position:center;
+  transition:transform .35s ease;
 }
+.card:hover .card-image img {transform:scale(1.035);}
 .tag {
   position:absolute;
   top:13px;
@@ -310,7 +313,8 @@ section {padding:75px 20px}
 .gallery-item img {
   width:100%;
   height:220px;
-  object-fit:contain;
+  object-fit:cover;
+  object-position:center;
   background:#edf3f0;
 }
 
@@ -393,16 +397,32 @@ footer p {color:#c6d9d9;font-size:.9rem}
   z-index:30;
   bottom:20px;
   right:18px;
-  background:#20c66a;
+  background:#25D366;
   color:white;
-  width:60px;
-  height:60px;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  font-size:1.7rem;
-  box-shadow:0 8px 25px rgba(0,0,0,.25);
+  min-height:58px;
+  padding:0 19px 0 14px;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  font-size:.96rem;
+  font-weight:850;
+  box-shadow:0 9px 28px rgba(0,0,0,.25);
+  border:2px solid rgba(255,255,255,.95);
 }
+.whatsapp-float svg,.wa-icon {width:27px;height:27px;flex:0 0 27px;display:block}
+.wa-icon {width:19px;height:19px;flex-basis:19px}
+.card-actions .btn {gap:7px}
+.card-quick-facts span {background:#eff8f5;border:1px solid #dceee7;border-radius:999px;padding:5px 9px;font-size:.76rem;font-weight:700;color:#087f8c}
+.card-quick-facts {display:flex;gap:7px;flex-wrap:wrap;margin:0 0 13px}
+.course-list {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0}
+.course-option {background:linear-gradient(145deg,#eff9f5,#e9f4f7);border:1px solid #d8ebe5;border-radius:15px;padding:14px}
+.course-option h4 {margin:0 0 8px;color:var(--navy);font-size:1rem}
+.course-option strong {display:block;color:#087f8c;font-size:1.1rem}
+.course-option p {margin:5px 0 0;color:var(--muted);font-size:.84rem}
+.provider-note {font-size:.85rem;color:var(--muted);padding:12px 14px;background:#fff8e9;border:1px solid #f2e4c4;border-radius:12px;margin:12px 0}
+@media(max-width:650px){.course-list{grid-template-columns:1fr}.whatsapp-float{min-height:54px;padding:0 15px 0 12px;right:13px;bottom:13px}.gallery-item img{object-fit:cover}}
 .modal {
   display:none;
   position:fixed;
@@ -881,7 +901,7 @@ button,a{touch-action:manipulation}
 <p>© <span id="year"></span> Explora El Cuyo Tours. Todos los derechos reservados.</p>
 </footer>
 
-<a class="whatsapp-float" href="https://wa.me/5219841858200" target="_blank" rel="noopener" aria-label="WhatsApp">☏</a>
+<a class="whatsapp-float" href="https://wa.me/5219841858200" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 2.7A13.1 13.1 0 0 0 4.7 22.4L3 29l6.8-1.8A13.2 13.2 0 1 0 16 2.7Zm0 23.8c-2 0-3.9-.5-5.5-1.6l-.4-.2-4 .9 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.5Zm5.8-7.9c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-2.6-1.6 9.6 9.6 0 0 1-1.8-2.2c-.2-.3 0-.5.1-.7l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.2-1.2 2.8 1.2 3.2 1.4 3.4a13 13 0 0 0 5 4.4c.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4s-.3-.2-.6-.4Z"/></svg><span>WhatsApp</span></a>
 
 <div class="modal" id="detailsModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
 <div class="modal-box">
@@ -895,6 +915,11 @@ button,a{touch-action:manipulation}
 <div class="tour-detail-section" id="modalRouteSection" hidden>
 <h3>Tu experiencia paso a paso</h3>
 <ol id="modalRoute"></ol>
+</div>
+<div class="tour-detail-section" id="modalCoursesSection" hidden>
+<h3>Opciones de cursos y tarifas publicadas</h3>
+<div class="course-list" id="modalCourses"></div>
+<p class="provider-note" id="modalProviderNote"></p>
 </div>
 <div class="tour-detail-section" id="modalIncludesSection" hidden>
 <h3>Servicios incluidos</h3>
@@ -923,6 +948,7 @@ button,a{touch-action:manipulation}
 "use strict";
 
 const WHATSAPP = "5219841858200";
+const waIcon = '<svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 2.7A13.1 13.1 0 0 0 4.7 22.4L3 29l6.8-1.8A13.2 13.2 0 1 0 16 2.7Zm0 23.8c-2 0-3.9-.5-5.5-1.6l-.4-.2-4 .9 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.5Zm5.8-7.9c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-2.6-1.6 9.6 9.6 0 0 1-1.8-2.2c-.2-.3 0-.5.1-.7l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.2-1.2 2.8 1.2 3.2 1.4 3.4a13 13 0 0 0 5 4.4c.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4s-.3-.2-.6-.4Z"/></svg>';
 
 const activities = [
 {
@@ -962,6 +988,7 @@ title:"Pesca de orilla",
 page:"tours/pesca-en-el-cuyo.html",
 category:"lancha",
 image:"lancha_pesca_nino_pescado_chalecos.webp",
+imagePosition:"center 43%",
 price:"$6,000 MXN (hasta 6 personas)",
 description:"Disfruta una jornada de pesca cerca de la costa, sin alejarse demasiado de la orilla.",
 note:"Precio de referencia: $6,000 MXN por salida para hasta 6 personas. Puedes consultar pesca de fondo o de orilla; confirma la modalidad, el horario y la disponibilidad antes de reservar. La captura depende de las condiciones y no se puede garantizar.",
@@ -1009,6 +1036,7 @@ route:[
 title:"Bioluminiscencia",
 category:"naturaleza",
 image:"sinclasificar_bioluminiscencia_olas.webp",
+imagePosition:"center 82%",
 price:"$850 MXN por persona",
 description:"Una experiencia nocturna para observar el fenómeno natural de la bioluminiscencia.",
 note:"Duración aproximada: 2 horas. Recogida en tu hotel o alojamiento durante tu estancia; traslado en cuatrimoto a una playa virgen a unos 3.5 km de El Cuyo, guía acompañante y regreso a tu alojamiento. Salidas habituales: 8:30 p.m. o 9:30 p.m. No incluye snack. La intensidad del fenómeno depende de las condiciones naturales y no se puede garantizar.",
@@ -1106,12 +1134,22 @@ note:"Fotografías propias del material proporcionado para Explora El Cuyo Tours
 keywords:["wingfoil","wing foil","windfoil","foil","hidrofoil","deportes acuáticos","vela","tabla con foil"]
 },
 {
-title:"Kitesurf",
+title:"Clases de kitesurf · Pura Vida Kite Surf School",
 category:"agua",
-image:"kitesurf_cometas_en_playa.webp",
-price:"Consultar",
-description:"El Cuyo es un destino conocido por sus condiciones para practicar kitesurf.",
-note:"Consulta clases, renta de equipo y disponibilidad."
+image:"kitesurf_cometa_en_el_aire_personas.webp",
+price:"Cursos desde $3,000 MXN por persona (tarifa grupal publicada)",
+description:"Aprende kitesurf en El Cuyo con cursos para distintos niveles. Consulta el programa Discovery, Intermedio o Full Course y encuentra la opción adecuada a tu experiencia.",
+note:"Información transcrita del flyer de Pura Vida Kite Surf School compartido para la página. Las tarifas y condiciones pertenecen al proveedor y deben confirmarse antes de reservar. Instagram: @puravida_elcuyo.",
+duration:"3, 6 o 9 horas según el curso",
+capacity:"Consulta disponibilidad y tamaño del grupo",
+provider:"Pura Vida Kite Surf School",
+providerInstagram:"https://www.instagram.com/puravida_elcuyo/",
+courses:[
+{name:"Discovery",duration:"3 horas",hourly:"$1,500 MXN/h",individual:"$4,500 MXN por persona",group:"$3,000 MXN por persona"},
+{name:"Intermedio",duration:"6 horas",hourly:"$1,400 MXN/h",individual:"$8,400 MXN por persona",group:"$6,000 MXN por persona"},
+{name:"Full Course",duration:"9 horas",hourly:"$1,300 MXN/h",individual:"$11,700 MXN por persona",group:"$9,000 MXN por persona"}
+],
+keywords:["clases de kitesurf","curso de kitesurf","Pura Vida Kite Surf School","Discovery","Intermedio","Full Course"]
 },
 {
 title:"Transporte privado",
@@ -1295,6 +1333,7 @@ function renderCards() {
     image.src = item.image;
     image.alt = item.title;
     image.loading = "lazy";
+    image.style.objectPosition = item.imagePosition || "center";
     image.onerror = () => {
       image.style.display = "none";
       imageWrap.style.background = "#dcebe7";
@@ -1338,7 +1377,7 @@ function renderCards() {
 
     const whatsapp = document.createElement("a");
     whatsapp.className = "btn";
-    whatsapp.textContent = "Consultar";
+    whatsapp.innerHTML = waIcon + "<span>WhatsApp</span>";
     whatsapp.href = makeWhatsAppLink(item.title);
     whatsapp.target = "_blank";
     whatsapp.rel = "noopener";
@@ -1354,6 +1393,7 @@ function showDetails(item) {
   const modalImage = document.getElementById("modalImage");
   modalImage.src = item.image;
   modalImage.alt = item.title;
+  modalImage.style.objectPosition = item.imagePosition || "center";
   modalImage.onerror = () => {
     modalImage.removeAttribute("src");
     modalImage.alt = "Imagen no disponible";
@@ -1405,6 +1445,26 @@ function showDetails(item) {
     excludesList.append(li);
   });
 
+  const coursesSection = document.getElementById("modalCoursesSection");
+  const coursesList = document.getElementById("modalCourses");
+  const providerNote = document.getElementById("modalProviderNote");
+  coursesList.innerHTML = "";
+  coursesSection.hidden = !item.courses || !item.courses.length;
+  (item.courses || []).forEach(course => {
+    const option = document.createElement("article");
+    option.className = "course-option";
+    const heading = document.createElement("h4");
+    heading.textContent = course.name;
+    const duration = document.createElement("p");
+    duration.textContent = course.duration + " · " + course.hourly;
+    const individual = document.createElement("strong");
+    individual.textContent = course.individual;
+    const group = document.createElement("p");
+    group.textContent = "Tarifa grupal del flyer: " + course.group;
+    option.append(heading, duration, individual, group);
+    coursesList.append(option);
+  });
+  providerNote.textContent = item.courses ? "Proveedor: " + item.provider + ". Tarifas copiadas del flyer recibido; confirma vigencia, condiciones y disponibilidad directamente al solicitar tu cotización." : "";
   const includesSection = document.getElementById("modalIncludesSection");
   const includesList = document.getElementById("modalIncludes");
   includesList.innerHTML = "";
@@ -1429,8 +1489,9 @@ function renderGallery() {
 
     const image = document.createElement("img");
     image.src = file;
-    image.alt = file.startsWith("IMG-20261029-WA005") ? "Wingfoil en El Cuyo, Yucatán: deportista navegando sobre una tabla con hidrofoil y ala de mano" : "Paisaje y experiencia turística en El Cuyo, Yucatán: " + file.replace(/[_-]/g, " ").replace(/\.(jpg|jpeg|png|webp)$/i, "");
+    image.alt = file.startsWith("IMG-20261029-WA005") ? "Wingfoil en El Cuyo, Yucatán: deportista navegando sobre una tabla con hidrofoil y ala de mano" : file.includes("bioluminiscencia") ? "Bioluminiscencia azul brillando en la orilla del mar durante la noche en El Cuyo" : file.includes("lancha_pesca_nino") ? "Experiencia de pesca artesanal en lancha en El Cuyo" : "Paisaje y experiencia turística en El Cuyo, Yucatán: " + file.replace(/[_-]/g, " ").replace(/\.(jpg|jpeg|png|webp)$/i, "");
     image.loading = "lazy";
+    if (file === "sinclasificar_bioluminiscencia_olas.webp") image.style.objectPosition = "center 82%";
 
     image.onerror = () => button.remove();
 
