@@ -744,6 +744,13 @@ button,a{touch-action:manipulation}
   .card:hover,.gallery-item:hover,.btn:hover{transform:none}
 }
 
+
+/* Ajustes finales: botón WhatsApp visible también en móviles y fotos completas en galería */
+.whatsapp-float{width:auto!important;height:auto!important;min-width:150px;min-height:58px!important}
+.whatsapp-float svg{width:29px;height:29px;flex-basis:29px}
+.gallery-item img{object-fit:contain!important;background:#e8f2ef}
+@media(max-width:650px){.whatsapp-float{width:auto!important;height:auto!important;min-width:145px;min-height:54px!important;right:13px;bottom:13px}.gallery-item img{object-fit:contain!important}}
+
 </style>
 </head>
 
