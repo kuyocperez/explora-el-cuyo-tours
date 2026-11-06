@@ -1097,13 +1097,13 @@ note:"Renta libre. Consulta disponibilidad y condiciones del servicio.",
 duration:"2 horas",
 },
 {
-title:"Windfoil / Wingfoil",
+title:"Wingfoil (tabla con foil)",
 category:"agua",
-image:"https://images.pexels.com/photos/29579058/pexels-photo-29579058.jpeg?cs=srgb&dl=pexels-philevenphotos-29579058.jpg&fm=jpg",
+image:"IMG-20261029-WA0052.jpg",
 price:"Consultar",
-description:"Descubre el windfoil o wingfoil: una modalidad de deporte acuático en la que una tabla con foil se eleva sobre el agua impulsada por el viento. Consulta opciones para practicarlo en El Cuyo.",
-note:"Fotografía ilustrativa de Phil Evenden, publicada en Pexels y ofrecida para uso gratuito. La imagen no representa necesariamente las condiciones locales. Clases, equipo, disponibilidad y condiciones deben confirmarse antes de reservar.",
-keywords:["windfoil","wingfoil","foil","hidrofoil","deportes acuáticos","vela"]
+description:"Vive el wingfoil en El Cuyo: deslízate sobre el agua con una tabla equipada con hidrofoil y una vela de mano (wing), impulsada por el viento. Pregunta por opciones para practicar este deporte foil y otras modalidades de navegación a vela.",
+note:"Fotografías propias del material proporcionado para Explora El Cuyo Tours. Consulta clases, equipo, nivel requerido, disponibilidad y condiciones antes de reservar.",
+keywords:["wingfoil","wing foil","windfoil","foil","hidrofoil","deportes acuáticos","vela","tabla con foil"]
 },
 {
 title:"Kitesurf",
@@ -1196,7 +1196,10 @@ const galleryImages = [
   "kitesurf_cometa_gris_amarilla_playa.webp",
   "kitesurf_cometa_en_el_aire_personas.webp",
   "kitesurf_cometas_en_playa.webp",
-  "https://images.pexels.com/photos/29579058/pexels-photo-29579058.jpeg?cs=srgb&dl=pexels-philevenphotos-29579058.jpg&fm=jpg",
+  "IMG-20261029-WA0051.jpg",
+  "IMG-20261029-WA0052.jpg",
+  "IMG-20261029-WA0053.jpg",
+  "IMG-20261029-WA0054.jpg",
   "lancha_ancia_grupo_playa_julio.webp",
   "lancha_atardecer_chalecos_personas.webp",
   "lancha_azul_blanca_chalecos_ninos.webp",
@@ -1426,7 +1429,7 @@ function renderGallery() {
 
     const image = document.createElement("img");
     image.src = file;
-    image.alt = "Paisaje y experiencia turística en El Cuyo, Yucatán: " + file.replace(/[_-]/g, " ").replace(/\.(jpg|jpeg|png|webp)$/i, "");
+    image.alt = file.startsWith("IMG-20261029-WA005") ? "Wingfoil en El Cuyo, Yucatán: deportista navegando sobre una tabla con hidrofoil y ala de mano" : "Paisaje y experiencia turística en El Cuyo, Yucatán: " + file.replace(/[_-]/g, " ").replace(/\.(jpg|jpeg|png|webp)$/i, "");
     image.loading = "lazy";
 
     image.onerror = () => button.remove();
