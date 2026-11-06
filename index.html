@@ -765,6 +765,10 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #f28b
 <h3>Servicios incluidos</h3>
 <ul id="modalIncludes"></ul>
 </div>
+<div class="tour-detail-section" id="modalExcludesSection" hidden>
+<h3>No incluye / considera</h3>
+<ul id="modalExcludes"></ul>
+</div>
 <p class="price" id="modalPrice"></p>
 <p class="note" id="modalNote"></p>
 <a class="btn" id="modalWhatsapp" href="#" target="_blank" rel="noopener">Consultar por WhatsApp</a>
@@ -814,7 +818,8 @@ description:"Una salida de pesca en lancha que se aleja un poco de la costa para
 note:"Precio de referencia: $6,000 MXN por salida para hasta 6 personas. Puedes consultar pesca de fondo o de orilla; confirma la modalidad, el horario y la disponibilidad antes de reservar. La captura depende de las condiciones y no se puede garantizar.",
 schedule:"Salida: 6:00 a. m. o 7:00 a. m. · Regreso: por confirmar",
 capacity:"Hasta 6 personas; confirmar modalidad y embarcación",
-includes:["Botellas de agua purificada","Frutas del día"]
+includes:["Botellas de agua purificada","Frutas del día"],
+excludes:["Equipo, carnada u otros servicios que no hayan sido confirmados."]
 
 },
 {
@@ -838,6 +843,7 @@ image:"coloradas_personas_laguna_rosa.webp",
 price:"$5,500–$6,500 MXN (1–6 personas)",
 description:"Conoce los paisajes de las salinas y sus canales en un recorrido en lancha por la zona de Las Coloradas.",
 note:"Tarifa aproximada de $5,500 a $6,500 MXN para 1 a 6 personas, según recorrido y operación. Salida habitual a las 8:00 a. m. y regreso aproximado a la 1:00 p. m. (5 horas). La entrada al parque turístico, si se visita, no está incluida. Confirma el total antes de reservar.",
+excludes:["Entrada al parque turístico de Las Coloradas, si se visita.","Servicios y consumos no mencionados."],
 duration:"5 horas aproximadamente",
 schedule:"8:00 a. m. – 1:00 p. m. aproximadamente",
 capacity:"1 a 6 personas; precio final según recorrido",
@@ -855,6 +861,7 @@ duration:"6 horas aproximadamente",
 schedule:"Salida: 8:00 a. m. · Regreso: 2:00 p. m. aproximadamente",
 capacity:"1 a 6 personas; persona adicional $750 MXN",
 includes:["Botellas de agua purificada","Frutas del día"],
+excludes:["Entrada a Yalahau (aprox. $300 MXN por persona), se paga aparte.","Gastos personales y consumos no mencionados."],
 route:[
 "Yalahau: visita el manantial de agua dulce. Considera aproximadamente 1 hora para la visita; entrada estimada $300 MXN por persona, no incluida.",
 "Punta Mosquito: parada para disfrutar del paisaje costero y observar la flora y fauna, según las condiciones del día.",
@@ -868,7 +875,8 @@ category:"naturaleza",
 image:"sinclasificar_bioluminiscencia_olas.webp",
 price:"$850 MXN por persona",
 description:"Una experiencia nocturna para observar el fenómeno natural de la bioluminiscencia.",
-note:"Duración aproximada: 2 horas. Recogida en tu hotel o alojamiento durante tu estancia; traslado en cuatrimoto a una playa virgen a unos 3.5 km de El Cuyo, guía acompañante y regreso a tu alojamiento. Salidas habituales: 8:30 p.m. o 9:30 p.m. No incluye snack. La intensidad del fenómeno depende de las condiciones naturales y no se puede garantizar."
+note:"Duración aproximada: 2 horas. Recogida en tu hotel o alojamiento durante tu estancia; traslado en cuatrimoto a una playa virgen a unos 3.5 km de El Cuyo, guía acompañante y regreso a tu alojamiento. Salidas habituales: 8:30 p.m. o 9:30 p.m. No incluye snack. La intensidad del fenómeno depende de las condiciones naturales y no se puede garantizar.",
+excludes:["Snack." ]
 },
 {
 title:"Las Coloradas en cuatrimoto Can-Am Outlander",
@@ -882,6 +890,7 @@ duration:"5 horas aproximadamente",
 schedule:"Horario de salida y regreso: confirmar al reservar",
 capacity:"2 personas por cuatrimoto",
 includes:["Botellas de agua purificada"],
+excludes:["Frutas del día.","Entrada al parque turístico de Las Coloradas, si se visita."],
 route:[
 "La Ría (laguna): conoce el entorno de las salinas y la tradición de extracción de sal.",
 "Playa virgen: parada para apreciar el paisaje y observar aves como flamencos, pelícanos, cormoranes y garzas.",
@@ -1169,7 +1178,7 @@ function renderCards() {
     const detail = document.createElement("button");
     detail.type = "button";
     detail.className = "btn btn-dark";
-    detail.textContent = "Ver detalles del tour";
+    detail.textContent = "Ver detalles";
     detail.addEventListener("click", () => showDetails(item));
 
     const whatsapp = document.createElement("a");
@@ -1229,6 +1238,16 @@ function showDetails(item) {
     const li = document.createElement("li");
     li.textContent = stop;
     routeList.append(li);
+  });
+
+  const excludesSection = document.getElementById("modalExcludesSection");
+  const excludesList = document.getElementById("modalExcludes");
+  excludesList.innerHTML = "";
+  excludesSection.hidden = !item.excludes || !item.excludes.length;
+  (item.excludes || []).forEach(detail => {
+    const li = document.createElement("li");
+    li.textContent = detail;
+    excludesList.append(li);
   });
 
   const includesSection = document.getElementById("modalIncludesSection");
